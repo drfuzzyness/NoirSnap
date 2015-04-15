@@ -4,13 +4,17 @@ using System.Collections;
 [RequireComponent (typeof (Rigidbody))]
 public class Mob : MonoBehaviour {
 
-
-	public float walkSpeed;
-	public float runSpeed;
 	public bool walkOnStart;
+
+	[Header("State")]
 	private float currentSpeed;
 	public bool isWalking;
 	public bool isRunning;
+
+	[Header("Balance")]
+	public float walkSpeed;
+	public float runSpeed;
+	public float stoppedDrag;
 
 	public void turnToFace( Transform target ) {
 		// clamps Z and X and looks at target transform
@@ -42,7 +46,7 @@ public class Mob : MonoBehaviour {
 		isWalking = false;
 		isRunning = false;
 		currentSpeed = 0f;
-		GetComponent<Rigidbody>().drag = 1000f;
+		GetComponent<Rigidbody>().drag = stoppedDrag;
 	}
 
 	void Start() {
