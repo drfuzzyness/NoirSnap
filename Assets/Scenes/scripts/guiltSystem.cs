@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class guiltSystem : MonoBehaviour {
 	bool isGuilty = true;
-	private string guiltyColor;
-	public List <gameObject> GuiltyUntilProvenInnocent = new List<string>();
+	private Color guiltyColor;
+	public List <string> GuiltyUntilProvenInnocent = new List<string>();
 
 
 	string textBuffer = "Possible culprits will be in color.  As you eliminate suspects from the pool of possible culprits, they will fade to black.";
