@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ParticipantManager : MonoBehaviour {
+
+	public List<Character> characters;
+	public List<Photographable> photographables;
 
 	// Use this for initialization
 	void Start () {
