@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class OverheadPlayerMovement : MonoBehaviour {
+public class playerMovement : MonoBehaviour {
 
 	public float speed = 5f;
 	bool hasItem = false;

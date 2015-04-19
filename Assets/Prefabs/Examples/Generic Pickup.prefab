@@ -76,7 +76,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collected: 0
   hideOnCollect: 1
-  informOnCollect: []
+  informOnCollect:
+  - {fileID: 0}
 --- !u!114 &11478106
 MonoBehaviour:
   m_ObjectHideFlags: 1

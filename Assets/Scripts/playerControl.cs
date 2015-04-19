@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OverheadPlayerControl : MonoBehaviour {
+public class playerControl : MonoBehaviour {
 
-	public bool useControlScheme = true;
 	public float speed = 5f;
 	public float sneakSpeed = 5f;
 	public float turnSpeed = 5f;
