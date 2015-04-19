@@ -592,15 +592,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 6
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -626,8 +626,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -5.07904053, y: -3.42410278}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -5, y: -3}
+  m_SizeDelta: {x: 973, y: 507}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &445954988
 GameObject:
@@ -1105,12 +1105,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 799985167}
-  m_LocalRotation: {x: .00260874233, y: -.692522943, z: .72138685, w: .00249057985}
-  m_LocalPosition: {x: 9, y: 59.2000008, z: -17.6000004}
+  m_LocalRotation: {x: -.712140143, y: -.110540047, z: .115161464, w: -.683648407}
+  m_LocalPosition: {x: -3.13533306, y: 59.2000008, z: 19.5174255}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1171187157}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1001 &853493089
 Prefab:
   m_ObjectHideFlags: 0
@@ -1493,15 +1493,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1171187151}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .987746537, z: 0, w: .156067029}
   m_LocalPosition: {x: -6.19999981, y: 1.29999995, z: 15.1999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1088819755}
-  - {fileID: 799985168}
   - {fileID: 1876877875}
+  - {fileID: 799985168}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
 --- !u!114 &1171187158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1721,10 +1721,10 @@ MonoBehaviour:
   - DRAMA IN THE NEWS!
   - HOODLUMS CAPTURE THE CITY!
   delays:
-  - 1
+  - 4
   - 0
   resetOnCompletion: 0
-  outputStream: {fileID: 0}
+  outputStream: {fileID: 412672849}
   informOnCompletion: []
 --- !u!114 &1268282498
 MonoBehaviour:
@@ -2777,12 +2777,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1876877870}
-  m_LocalRotation: {x: .00260874233, y: -.692522943, z: .72138685, w: .00249057985}
-  m_LocalPosition: {x: 9, y: 59.2000008, z: -17.6000004}
+  m_LocalRotation: {x: -.712140143, y: -.110540047, z: .115161464, w: -.683648407}
+  m_LocalPosition: {x: -3.13533306, y: 59.2000008, z: 19.5174255}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1171187157}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1001 &1972148221
 Prefab:
   m_ObjectHideFlags: 0
