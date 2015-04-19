@@ -12,9 +12,10 @@ GameObject:
   - 135: {fileID: 13552722}
   - 23: {fileID: 2309154}
   - 114: {fileID: 11423334}
-  - 114: {fileID: 11478106}
+  - 114: {fileID: 11400400}
+  - 114: {fileID: 11443548}
   m_Layer: 0
-  m_Name: Generic Pickup
+  m_Name: Generic Photographable
   m_TagString: Evidence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,6 +64,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184126}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11400400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d0e5047551f454fb7cb1305487b555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seen: 0
 --- !u!114 &11423334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,10 +88,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collected: 0
-  hideOnCollect: 1
-  informOnCollect:
-  - {fileID: 0}
---- !u!114 &11478106
+  hideOnCollect: 0
+  informOnCollect: []
+--- !u!114 &11443548
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,10 +98,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 184126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ca5aaee0c3ed4cd4854d4cf39662252, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ce4aa7d37f42402186975ee0104b3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  participantManager: {fileID: 0}
 --- !u!135 &13552722
 SphereCollider:
   m_ObjectHideFlags: 1
