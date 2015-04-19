@@ -11,7 +11,7 @@ public class ScannerDebugger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if( GetComponent<ScanForTarget>().sees( GetComponent<ScanForTarget>().player.gameObject ) ) {
+		if( GetComponent<ScanForTarget>().sees( GetComponent<ScanForTarget>().target.gameObject ) ) {
 			Debug.Log ( gameObject + " sees" );
 		}
 	}
