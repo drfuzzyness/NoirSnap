@@ -11,4 +11,10 @@ public class Photographable : MonoBehaviour {
 		seen = false;
 	}
 
+	void photographed() {
+		if( !seen ) {
+			seen = true;
+		}
+	}
+
 }
