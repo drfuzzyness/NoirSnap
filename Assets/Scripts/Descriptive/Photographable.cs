@@ -11,7 +11,7 @@ public class Photographable : MonoBehaviour {
 		seen = false;
 	}
 
-	void photographed() {
+	void OnPhotographed() {
 		if( !seen ) {
 			seen = true;
 		} else {

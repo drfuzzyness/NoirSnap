@@ -36,7 +36,7 @@ public class PhotographyManager : MonoBehaviour {
 		foreach( Photographable thisObj in participantManager.photographables ) {
 			if( canSee( thisObj.transform ) ) {
 				Debug.Log( gameObject.name + " sees " + thisObj.gameObject.name );
-				thisObj.SendMessage( "photographed" ); // Calls all functions in all components on the object with name void photographed()
+				thisObj.SendMessage( "OnPhotographed" ); // Calls all functions in all components on the object with name void OnPhotographed()
 			} else {
 				Debug.Log( gameObject.name + " can't see " + thisObj.gameObject.name );
 			}

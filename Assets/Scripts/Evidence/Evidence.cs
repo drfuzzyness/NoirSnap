@@ -13,9 +13,9 @@ public class Evidence : MonoBehaviour {
 
 	public void collect() {
 		if( !collected ) {
-			gameObject.SendMessage( "collected" );
+			gameObject.SendMessage( "OnCollected" );
 			foreach( GameObject thisObj in informOnCollect ) {
-				thisObj.SendMessage( "collected" );
+				thisObj.SendMessage( "OnCollected" );
 			}
 			if( hideOnCollect ) {
 				gameObject.SetActive( false );
