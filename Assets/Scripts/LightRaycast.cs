@@ -7,11 +7,15 @@ public class LightRaycast : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		playerPrefab.GetComponent<StealthPercent>().stealth = true;
+
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		// ray from spotlight to the ground
 		Ray lightRay = new Ray(transform.position, transform.forward);
 		// gets a list of all the colliders the light ray is hitting
@@ -25,11 +29,7 @@ public class LightRaycast : MonoBehaviour {
 				break;
 
 			}
-			else{
-				
-				playerPrefab.GetComponent<StealthPercent>().stealth = true;
-				
-			}
+
 
 		}
 		// previous code used. not good. ignore.
