@@ -30,6 +30,7 @@ public class WalkOnRoute : MonoBehaviour {
 		mob.turnToFace( nextWayPoint.transform );
 		mob.walk();
 		while( inTransit ) {
+			mob.turnToFace( nextWayPoint.transform );
 			yield return null;
 		}
 	}
