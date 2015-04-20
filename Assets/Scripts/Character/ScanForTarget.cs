@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent (typeof (Mob))]
 public class ScanForTarget : MonoBehaviour {
 
-	public Mob player;
+	public Mob target;
 
 	[Header("State")]
 	public bool chasing;
