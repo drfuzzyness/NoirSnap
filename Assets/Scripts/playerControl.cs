@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class playerControl : MonoBehaviour {
 
 	public float speed = 5f;
 	public float sneakSpeed = 5f;
 	public float turnSpeed = 5f;
+	public Transform itemBox;
+	public Text text;
 	// public bool isSneaking = false;
 
 	
@@ -31,7 +34,12 @@ public class playerControl : MonoBehaviour {
 
 		}
 
-
+		if (Input.GetKeyDown(KeyCode.E)){
+			if (pickupItem.OnObject){
+				Destroy (itemBox);
+				text.text = "You have the item!";
+			}
+		}
 
 	}
 

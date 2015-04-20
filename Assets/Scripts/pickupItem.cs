@@ -9,10 +9,13 @@ public class pickupItem : MonoBehaviour {
 	public static GameObject OnObject;
 
 	void OnTriggerEnter(Collider other) {
-		text.text = "Press [E] to pick up item";
-		//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING
-		//text.text = "Press [E] to pick up" + itemName;
-		OnObject = other.gameObject;
+
+		if(other.tag == "Player")
+		{
+			text.text = "Press [E] to pick up item";
+			OnObject = other.gameObject;
+		}//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING
+		//text.text = "Press [E] to pick up" + itemName
 	}
 	
 	void OnTriggerExit(Collider other) {
