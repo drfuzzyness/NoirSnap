@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent( typeof( Mob ))]
 public class FirstPersonCameraControl : MonoBehaviour {
 
-	public float sensitivity;
+	public Vector2 sensitivity;
 	public bool controlEnabled = false;
 	public PhotographyManager cam;
 	
@@ -19,9 +19,18 @@ public class FirstPersonCameraControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if( controlEnabled ) {
-			cam.transform.Rotate( Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0f );
+			cam.transform.Rotate( -Input.GetAxis("Mouse Y") * sensitivity.y, Input.GetAxis("Mouse X") * sensitivity.x , 0f );
+			Vector3 tempRot = cam.transform.localEulerAngles;
+			tempRot.z = 0f;
+			Camera.main.transform.localEulerAngles = tempRot;
+			cam.transform.localEulerAngles = tempRot;
+			if( Input.GetAxis( "Take Photo" ) > 0 ) {
+				cam.snap();
+			}
+
+//			Debug.Log( Input.GetAxis("Mouse X") + ", " + Input.GetAxis("Mouse Y") );
 		}
-		if( Input.GetAxis( "OpenCam" ) > 0 ) {
+		if( Input.GetAxis( "Open Camera" ) > 0 ) {
 			if( controlEnabled ) {
 				controlEnabled = false;
 				GetComponent<OverheadPlayerControl>().controlEnabled = true;

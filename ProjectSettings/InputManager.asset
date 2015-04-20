@@ -38,7 +38,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Photo
+    m_Name: Take Photo
     descriptiveName: Captures a Photograph
     descriptiveNegativeName: 
     negativeButton: 
@@ -54,7 +54,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: OpenCam
+    m_Name: Open Camera
     descriptiveName: Switches to the camera mode
     descriptiveNegativeName: 
     negativeButton: 
