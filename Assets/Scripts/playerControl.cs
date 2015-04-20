@@ -7,6 +7,7 @@ public class playerControl : MonoBehaviour {
 	public float turnSpeed = 5f;
 
 
+
 	Rigidbody rbody;
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,8 @@ public class playerControl : MonoBehaviour {
 
 		rbody.AddForce (transform.forward * speed * Input.GetAxis("Vertical"));
 		transform.Rotate (0f, Input.GetAxis ("Horizontal") * turnSpeed, 0f);
-	
+
+
 
 	}
 

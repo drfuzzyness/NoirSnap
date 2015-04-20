@@ -16,6 +16,7 @@ public class StealthPercent : MonoBehaviour {
 	void Update () {
 
 
+
 	
 	}
 }

@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Cop
   - Collectable
+  - Box
   layers:
   - Default
   - TransparentFX

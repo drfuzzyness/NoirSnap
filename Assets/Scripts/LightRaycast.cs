@@ -7,8 +7,6 @@ public class LightRaycast : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-
 	
 	}
 	
