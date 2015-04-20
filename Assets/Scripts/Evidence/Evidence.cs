@@ -20,6 +20,7 @@ public class Evidence : MonoBehaviour {
 			if( hideOnCollect ) {
 				gameObject.SetActive( false );
 			}
+			collected = true;
 		} else {
 			Debug.LogWarning( gameObject.name + " has already been collected." );
 		}
