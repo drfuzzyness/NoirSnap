@@ -171,12 +171,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 358358639}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af94af7663e139419a3a68f81f11dc0, type: 3}
+  m_Script: {fileID: 11500000, guid: b84dc14ac71db2b499461a926a927459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
+  sneakSpeed: 5
+  turnSpeed: 5
+  itemBox: {fileID: 1436455101}
   text: {fileID: 2116962797}
-  itemBox: {fileID: 1436455096}
 --- !u!54 &358358645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -190,7 +192,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1 &564288541
 GameObject:

@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11423334}
   - 114: {fileID: 11478106}
   m_Layer: 0
-  m_Name: Generic Pickup
+  m_Name: Generic Photographable
   m_TagString: Evidence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -33,6 +33,15 @@ public class pickupItem : MonoBehaviour {
 
 	}
 	void OnTriggerEnter(Collider other) {
+
+
+		if(other.tag == "Player")
+		{
+			text.text = "Press [E] to pick up item";
+			OnObject = other.gameObject;
+		}//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING
+		//text.text = "Press [E] to pick up" + itemName
+
 		playerInside = other;
 
 
