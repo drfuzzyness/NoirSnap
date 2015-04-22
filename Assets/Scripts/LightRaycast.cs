@@ -29,6 +29,11 @@ public class LightRaycast : MonoBehaviour {
 				break;
 
 			}
+//			else{
+//				playerPrefab.GetComponent<StealthPercent>().stealth = true;
+//
+//			}
+
 
 
 		}
