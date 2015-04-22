@@ -6,12 +6,11 @@ public class playerControl : MonoBehaviour {
 
 	public float speed = 5f;
 	public float turnSpeed = 5f;
-<<<<<<< HEAD
+	public float sneakSpeed = 2f;
 	public Transform itemBox;
 	public Text text;
 	// public bool isSneaking = false;
-=======
->>>>>>> fc2b5e5cdef40f005d1ad5a8d129e829ae6433bd
+
 
 
 
@@ -30,7 +29,7 @@ public class playerControl : MonoBehaviour {
 		rbody.AddForce (transform.forward * speed * Input.GetAxis("Vertical"));
 		transform.Rotate (0f, Input.GetAxis ("Horizontal") * turnSpeed, 0f);
 
-<<<<<<< HEAD
+
 		if (Input.GetKey(KeyCode.LeftShift)){
 
 			rbody.AddForce (transform.forward * sneakSpeed * Input.GetAxis("Vertical"));
@@ -44,9 +43,7 @@ public class playerControl : MonoBehaviour {
 				text.text = "You have the item!";
 			}
 		}
-=======
 
->>>>>>> fc2b5e5cdef40f005d1ad5a8d129e829ae6433bd
 
 	}
 
