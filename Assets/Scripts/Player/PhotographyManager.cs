@@ -4,6 +4,10 @@ using System.Collections.Generic;
 
 public class PhotographyManager : MonoBehaviour {
 
+	[Header("Status")]
+	public bool inPhotographyMode;
+	public bool inTransition;
+
 	[Header("Balance")]
 	public float sightRange;
 	public float fieldOfView;
@@ -16,8 +20,7 @@ public class PhotographyManager : MonoBehaviour {
 	public AnimationCurve transition;
 	public ParticipantManager participantManager;
 
-	[Header("Status")]
-	public bool inPhotographyMode;
+
 
 
 
@@ -69,6 +72,7 @@ public class PhotographyManager : MonoBehaviour {
 	}
 
 	IEnumerator switchToPhotoWait() {
+		inTransition = true;
 		iTween.CameraFadeTo( 1f, transitionTime/2 );
 		yield return new WaitForSeconds( transitionTime/2 );
 		mainCamera.transform.position = transform.position;
@@ -76,17 +80,20 @@ public class PhotographyManager : MonoBehaviour {
 		iTween.CameraFadeTo( 0f, transitionTime/2 );
 		yield return new WaitForSeconds( transitionTime/2 );
 		inPhotographyMode = true;
+		inTransition = false;
 	}
 
 	IEnumerator switchToGameWait() {
+		inTransition = true;
 		inPhotographyMode = false;
+
 		iTween.CameraFadeTo( 1f, transitionTime/2 );
 		yield return new WaitForSeconds( transitionTime/2 );
 		mainCamera.transform.position = mainCameraPositionObject.position;
 		mainCamera.transform.rotation = mainCameraPositionObject.rotation;
 		iTween.CameraFadeTo( 0f, transitionTime/2 );
 		yield return new WaitForSeconds( transitionTime/2 );
-
+		inTransition = false;
 	}
 
 	// Use this for initialization

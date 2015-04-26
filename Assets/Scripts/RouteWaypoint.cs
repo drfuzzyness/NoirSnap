@@ -27,11 +27,12 @@ public class RouteWaypoint : MonoBehaviour {
 	}
 
 	IEnumerator applyDelay( WalkOnRoute walker ) {
-		walker.arrived();
-		yield return new WaitForSeconds( delay );
-		walker.setWaypoint( next );
-		if( walker.keepMoving ) {
-			walker.startTransit();
+		if( walker.arrived() ) {
+			yield return new WaitForSeconds( delay );
+			walker.setWaypoint( next );
+			if( walker.keepMoving ) {
+				walker.startTransit();
+			}
 		}
 	}
 
