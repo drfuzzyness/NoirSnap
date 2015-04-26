@@ -13,6 +13,8 @@ public class WalkOnRoute : MonoBehaviour {
 	public bool inTransit;
 	public bool allowInterruption;
 
+	private bool interrupted = false;
+
 //	[Header("Config")]
 
 	private Mob mob;
@@ -23,6 +25,7 @@ public class WalkOnRoute : MonoBehaviour {
 			return;
 		}
 		inTransit = true;
+		interrupted = false;
 		StartCoroutine( transit() );
 	}
 
