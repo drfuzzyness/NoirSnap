@@ -2,18 +2,20 @@
 using System.Collections;
 
 [RequireComponent (typeof (Mob))]
-public class ScanForTarget : MonoBehaviour {
+public class Scanner : MonoBehaviour {
 
 	public Mob target;
 
 	[Header("State")]
-	public bool chasing;
+	public bool aggressing;
 	public bool hasCaughtTarget;
 
 	[Header("Balance")]
 	public float sightRange;
 	public float visionConeAngle;
-	public float catchRange;
+
+	private WalkOnRoute walker;
+
 
 	public bool sees( GameObject target ){
 		Vector3 vectorToPlayer = target.transform.position - transform.position;
@@ -40,50 +42,38 @@ public class ScanForTarget : MonoBehaviour {
 		}
 	}
 
-	public void chase( GameObject target ) {
-		if( !chasing ) {
-			Debug.Log ("chasing " + target );
-			chasing = true;
-			GetComponent<Mob>().run();
-			StartCoroutine( "tryToCatch", target );
+	public void aggro( GameObject theTarget ) {
+		if( !aggressing ) {
+			Debug.Log( "Starting Aggro" );
+			aggressing = true;
+			SendMessage( "startAggro", theTarget );
+			walker.interrupt();
 		}
-
 	}
 
-	IEnumerator tryToCatch( GameObject target ) {
-		while( chasing && sees ( target ) ) {
-			Vector3 vectorToHunted = target.transform.position - transform.position;
-			GetComponent<Mob>().turnToFace( target.transform );
-			GetComponent<Mob>().run();
-			if(  vectorToHunted.magnitude < catchRange ) {
-				target.SendMessage( "caught" );
-
-				stopChasing();
-			}
-			yield return null;
-//			try {
-//				string garbage = target.name;
-//			} catch {
-//				stopChasing();
-//			}
+	public void deaggro() {
+		if( aggressing ) {
+			Debug.Log( "Stopping Aggro" );
+			aggressing = false;
+			SendMessage( "stopAggro" );
+			walker.startTransit();
 		}
-		target.SendMessage("calm");
-		stopChasing();
-
 	}
 
-	public void stopChasing() {
-		chasing = false;
-		GetComponent<Mob>().walk();
-	}
+
 
 	// Use this for initialization
 	void Start () {
-	
+		walker = GetComponent<WalkOnRoute>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if( sees( target.gameObject ) ) {
+			if( GetComponent<WalkOnRoute>() != null ) {
+				GetComponent<WalkOnRoute>().interrupt( true );
+				aggro( target.gameObject );
+			}
+		}
 	}
 }

@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof (ScanForTarget) )]
+[RequireComponent (typeof (Scanner) )]
 public class ScannerDebugger : MonoBehaviour {
 
 	// Use this for initialization
@@ -11,8 +11,14 @@ public class ScannerDebugger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if( GetComponent<ScanForTarget>().sees( GetComponent<ScanForTarget>().target.gameObject ) ) {
-			Debug.Log ( gameObject + " sees" );
+//		if( GetComponent<Scanner>().sees( GetComponent<Scanner>().target.gameObject ) ) {
+//			Debug.Log ( gameObject + " sees" );
+//		}
+	}
+
+	void OnDrawGizmos() {
+		if( GetComponent<Scanner>().sees( GetComponent<Scanner>().target.gameObject ) ) {
+			Gizmos.DrawLine( transform.position, GetComponent<Scanner>().target.transform.position );
 		}
 	}
 }
