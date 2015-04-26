@@ -16,7 +16,7 @@ public class Damageable : MonoBehaviour {
 
 	
 	public void kill() { // is kill
-		
+		SendMessage( "deathByLossOfLife" );
 	}
 
 	public void damage( float dmg ) {

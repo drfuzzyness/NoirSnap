@@ -8,12 +8,12 @@ public class FirstPersonCameraControl : MonoBehaviour {
 	public bool controlEnabled = false;
 	public PhotographyManager cam;
 	
-	private Mob mb;
-	private Rigidbody rbody;
+//	private Mob mb;
+//	private Rigidbody rbody;
 	// Use this for initialization
 	void Start () {
-		mb = GetComponent<Mob>();
-		rbody = GetComponent<Rigidbody>();
+//		mb = GetComponent<Mob>();
+//		rbody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame

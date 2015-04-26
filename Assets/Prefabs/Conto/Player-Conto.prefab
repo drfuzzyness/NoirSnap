@@ -30,6 +30,8 @@ GameObject:
   - 114: {fileID: 11435648}
   - 114: {fileID: 11458592}
   - 114: {fileID: 11491242}
+  - 114: {fileID: 11498516}
+  - 114: {fileID: 11489528}
   m_Layer: 0
   m_Name: Player-Conto
   m_TagString: Untagged
@@ -277,6 +279,21 @@ MonoBehaviour:
     m_PostInfinity: 2
   participantManager: {fileID: 0}
   inPhotographyMode: 0
+--- !u!114 &11489528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f37f01daa1c747edaa9bd91993bd788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  alive: 1
+  startingHealth: 10
+  isCharacter: 1
 --- !u!114 &11491242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,6 +308,18 @@ MonoBehaviour:
   sensitivity: {x: 4, y: 2}
   controlEnabled: 0
   cam: {fileID: 11479380}
+--- !u!114 &11498516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf3e1622aaec48d28a2b39a6b3ef216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelMan: {fileID: 0}
 --- !u!124 &12401236
 Behaviour:
   m_ObjectHideFlags: 1
