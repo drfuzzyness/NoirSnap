@@ -8,7 +8,7 @@ public class Chaser : MonoBehaviour {
 //	public ParticipantManager participantManager;
 	public float catchRange;
 	public float delayBeforeChase;
-	public List<GameObject> informOnVision
+	public List<GameObject> informOnVision;
 
 	private Scanner scan;
 	private WalkOnRoute router;
