@@ -126,10 +126,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 176646, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
-      propertyPath: m_Name
-      value: Generic Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
       propertyPath: target
       value: 
@@ -138,6 +134,14 @@ Prefab:
       propertyPath: nextWayPoint
       value: 
       objectReference: {fileID: 1788888931}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: visionConeAngle
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -1716,6 +1720,18 @@ Prefab:
       propertyPath: m_Name
       value: Generic Enemy 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: visionConeAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441324, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: catchRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -2713,6 +2729,18 @@ Prefab:
       propertyPath: nextWayPoint
       value: 
       objectReference: {fileID: 441096422}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: visionConeAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441324, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: catchRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -2831,6 +2859,18 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 2057307300}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: visionConeAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441324, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: catchRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -4113,6 +4153,18 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 2057307300}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: visionConeAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441324, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: catchRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -4465,6 +4517,18 @@ Prefab:
       propertyPath: nextWayPoint
       value: 
       objectReference: {fileID: 1862118509}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: visionConeAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441324, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: catchRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -4865,6 +4929,18 @@ Prefab:
     - target: {fileID: 176646, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
       propertyPath: m_Name
       value: Generic Enemy 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: visionConeAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441324, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: catchRange
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
@@ -8030,6 +8106,18 @@ Prefab:
       propertyPath: nextWayPoint
       value: 
       objectReference: {fileID: 311374838}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: visionConeAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441324, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: catchRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
