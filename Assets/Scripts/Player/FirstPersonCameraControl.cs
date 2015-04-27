@@ -6,14 +6,18 @@ public class FirstPersonCameraControl : MonoBehaviour {
 
 	public Vector2 sensitivity;
 	public bool controlEnabled = false;
+	public bool startInFirstPerson;
 	public PhotographyManager cam;
 	
-	private Mob mb;
-	private Rigidbody rbody;
+//	private Mob mb;
+//	private Rigidbody rbody;
 	// Use this for initialization
 	void Start () {
-		mb = GetComponent<Mob>();
-		rbody = GetComponent<Rigidbody>();
+//		mb = GetComponent<Mob>();
+//		rbody = GetComponent<Rigidbody>();
+		if( startInFirstPerson ) {
+			changeToCam();
+		}
 	}
 	
 	// Update is called once per frame
@@ -31,16 +35,28 @@ public class FirstPersonCameraControl : MonoBehaviour {
 //			Debug.Log( Input.GetAxis("Mouse X") + ", " + Input.GetAxis("Mouse Y") );
 		}
 		if( Input.GetAxis( "Open Camera" ) > 0 ) {
-			if( controlEnabled ) {
-				controlEnabled = false;
-				GetComponent<OverheadPlayerControl>().controlEnabled = true;
-				cam.switchToGame();
-			} else {
-				controlEnabled = true;
-				GetComponent<OverheadPlayerControl>().controlEnabled = false;
-				cam.switchToPhoto();
+			if( controlEnabled && !cam.inTransition ) {
+				changeToGame();
+			} else if( !controlEnabled && !cam.inTransition ) {
+				changeToCam();
 			}
 		}
+	}
+
+	public void changeToGame() {
+		if( cam.inTransition )
+			return;
+		controlEnabled = false;
+		GetComponent<OverheadPlayerControl>().controlEnabled = true;
+		cam.switchToGame();
+	}
+
+	public void changeToCam() {
+		if( cam.inTransition )
+			return;
+		controlEnabled = true;
+		GetComponent<OverheadPlayerControl>().controlEnabled = false;
+		cam.switchToPhoto();
 	}
 }
 

@@ -51,9 +51,15 @@ public class WalkOnRoute : MonoBehaviour {
 		nextWayPoint = next;
 	}
 
-	public void arrived() {
-		inTransit = false;
-		mob.stop();
+	public bool arrived() {
+		if( inTransit ) {
+			inTransit = false;
+			mob.stop();
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	void OnDrawGizmos() {
