@@ -30,16 +30,18 @@ public class WalkOnRoute : MonoBehaviour {
 	}
 
 	IEnumerator transit() {
-		mob.turnToFace( nextWayPoint.transform );
-		mob.walk();
+
 		while( inTransit ) {
 			mob.turnToFace( nextWayPoint.transform );
+			mob.walk();
 			yield return null;
 		}
 	}
 
 	public void interrupt( bool forceInterruption = false ) {
 		if( allowInterruption || forceInterruption ) {
+//			Debug.Log( gameObject.name + "'s path has been interrupted." );
+			inTransit = false;
 			StopCoroutine( transit() );
 		}
 	}

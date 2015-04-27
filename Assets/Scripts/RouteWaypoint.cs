@@ -28,7 +28,13 @@ public class RouteWaypoint : MonoBehaviour {
 
 	IEnumerator applyDelay( WalkOnRoute walker ) {
 		if( walker.arrived() ) {
-			yield return new WaitForSeconds( delay );
+			for( float timer = 0f; timer < delay; timer += Time.deltaTime ) {
+				if( walker.inTransit )
+					timer -= Time.deltaTime; // cheeky way to pause the countdown if the char is aggressing
+				yield return null;
+			}
+//			yield return new WaitForSeconds( delay );
+//			Debug.Log( "changing to next waypoint" );
 			walker.setWaypoint( next );
 			if( walker.keepMoving ) {
 				walker.startTransit();

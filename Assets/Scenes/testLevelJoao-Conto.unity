@@ -134,14 +134,6 @@ Prefab:
       propertyPath: nextWayPoint
       value: 
       objectReference: {fileID: 1788888931}
-    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
-      propertyPath: sightRange
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
-      propertyPath: visionConeAngle
-      value: 60
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -1624,7 +1616,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22469458, guid: a7547d1c18dfcb0479924dfa1f3f2aa8, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 22469458, guid: a7547d1c18dfcb0479924dfa1f3f2aa8, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -2298,7 +2290,7 @@ Transform:
   - {fileID: 1212810150}
   - {fileID: 49422233}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &607288018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,7 +3299,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 432506, guid: b5635a397b3f54ea2a04ea57fcb7ab4c, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 109350, guid: b5635a397b3f54ea2a04ea57fcb7ab4c, type: 2}
       propertyPath: m_IsActive
@@ -6608,7 +6600,7 @@ Transform:
   - {fileID: 1272261377}
   - {fileID: 721644326}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!114 &1683234070
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11424338, guid: 6fc5d062ae9024073ac7d836d1536462,
@@ -7266,7 +7258,7 @@ Transform:
   - {fileID: 1715059383}
   - {fileID: 669207356}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!114 &1862118509
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11424338, guid: 6fc5d062ae9024073ac7d836d1536462,
@@ -7956,6 +7948,19 @@ MeshFilter:
 GameObject:
   m_PrefabParentObject: {fileID: 169956, guid: 164bace21d158428f8f10ea3bae36708, type: 2}
   m_PrefabInternal: {fileID: 1099226477}
+--- !u!114 &2057307297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057307296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d987a69a5bcd408088d3bdfa22f08fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDelayBeforeAggro: 2
+  stealthPercent: 0
 --- !u!114 &2057307300
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11435648, guid: 164bace21d158428f8f10ea3bae36708,

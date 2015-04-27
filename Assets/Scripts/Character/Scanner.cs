@@ -46,6 +46,7 @@ public class Scanner : MonoBehaviour {
 		if( !aggressing ) {
 			Debug.Log( "Starting Aggro" );
 			aggressing = true;
+			target.SendMessage( "seenBy", gameObject );
 			SendMessage( "startAggro", theTarget );
 			walker.interrupt();
 		}
@@ -55,6 +56,7 @@ public class Scanner : MonoBehaviour {
 		if( aggressing ) {
 			Debug.Log( "Stopping Aggro" );
 			aggressing = false;
+			target.SendMessage( "noLongerSeenBy", gameObject );
 			SendMessage( "stopAggro" );
 			walker.startTransit();
 		}
@@ -72,8 +74,8 @@ public class Scanner : MonoBehaviour {
 		if( sees( target.gameObject ) ) {
 			if( GetComponent<WalkOnRoute>() != null ) {
 				GetComponent<WalkOnRoute>().interrupt( true );
-				aggro( target.gameObject );
 			}
+			aggro( target.gameObject );
 		}
 	}
 }

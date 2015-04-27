@@ -54,6 +54,11 @@ public class FirstPersonCameraControl : MonoBehaviour {
 	public void changeToCam() {
 		if( cam.inTransition )
 			return;
+		Ray rayToMousePos = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit rayHit = new RaycastHit();
+		if( Physics.Raycast( rayToMousePos, out rayHit ) ) {
+			cam.transform.LookAt( rayHit.point );
+		}
 		controlEnabled = true;
 		GetComponent<OverheadPlayerControl>().controlEnabled = false;
 		cam.switchToPhoto();
