@@ -8,6 +8,8 @@ public class pickupItem : MonoBehaviour {
 	Collider playerInside;
 	public Text text;
 	public static GameObject OnObject;
+	public Transform playerPrefab;
+	bool attached = false;
 
 	void Start(){
 		text.text = "";
@@ -22,10 +24,15 @@ public class pickupItem : MonoBehaviour {
 			//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING
 			//text.text = "Press [E] to pick up" + itemName;
 
-			if (Input.GetKeyDown(KeyCode.E)){
+			if (Input.GetKeyDown(KeyCode.E) && attached == false){
 
 				//Code where item is added to list player can access
-
+				transform.parent = playerPrefab.transform;
+				attached = true;
+			}
+			else if (Input.GetKeyDown(KeyCode.E) && attached == true){
+				transform.parent = null;
+				attached = false;
 			}
 
 		}
