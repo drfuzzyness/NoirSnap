@@ -285,9 +285,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 106446963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d56c3e9a1d714089b5301336d03bebb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cb1a3506f53546d885aa8b6404fc7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inPhotographyMode: 0
+  inTransition: 0
   sightRange: 100
   fieldOfView: 100
   transitionTime: 1
@@ -309,7 +311,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   participantManager: {fileID: 0}
-  inPhotographyMode: 0
 --- !u!1 &153809081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,6 +2980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: {x: 4, y: 2}
   controlEnabled: 0
+  startInFirstPerson: 0
   cam: {fileID: 106446965}
 --- !u!114 &1995389195
 MonoBehaviour:
