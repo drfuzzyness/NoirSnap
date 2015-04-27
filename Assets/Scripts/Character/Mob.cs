@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent (typeof (NavMeshAgent))]
 [RequireComponent (typeof (Rigidbody))]
 public class Mob : MonoBehaviour {
 
@@ -16,6 +17,8 @@ public class Mob : MonoBehaviour {
 	public float runSpeed;
 	public float stoppedDrag;
 
+	private NavMeshAgent agent;
+
 	public void turnToFace( Transform target ) {
 		// clamps Z and X and looks at target transform
 		Vector3 prevRot = transform.eulerAngles;
@@ -27,7 +30,13 @@ public class Mob : MonoBehaviour {
 
 	}
 
+	public void setDestination( Vector3 target ) {
+//		agent.SetDestination( target );
+	}
+
 	public void walk() {
+//		agent.speed = runSpeed;
+//		agent.Resume();
 		isWalking = true;
 		isRunning = false;
 		GetComponent<Rigidbody>().drag = .01f;
@@ -36,6 +45,8 @@ public class Mob : MonoBehaviour {
 	}
 
 	public void run() {
+//		agent.speed = runSpeed;
+//		agent.Resume();
 		isWalking = false;
 		isRunning = true;
 		GetComponent<Rigidbody>().drag = .01f;
@@ -43,6 +54,7 @@ public class Mob : MonoBehaviour {
 	}
 
 	public void stop() {
+//		agent.Stop();
 		isWalking = false;
 		isRunning = false;
 		currentSpeed = 0f;
@@ -50,6 +62,7 @@ public class Mob : MonoBehaviour {
 	}
 
 	void Start() {
+		agent = GetComponent<NavMeshAgent>();
 		stop();
 		if( walkOnStart ) {
 			walk();
