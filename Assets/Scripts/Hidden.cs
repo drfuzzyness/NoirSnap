@@ -4,7 +4,7 @@ using System.Collections;
 public class Hidden : MonoBehaviour {
 
 	Collider thingCurrentlyInside;
-	
+	public bool inBox = false;
 	// Use this for initialization
 	void Start () {
 
@@ -15,8 +15,11 @@ public class Hidden : MonoBehaviour {
 
 		// if there is a thing currently inside this trigger...
 		if (thingCurrentlyInside != null){
-			// then damage it
+			// make it's hidden stealth value TRUE (It's totally hiding, bro.)
 			thingCurrentlyInside.GetComponent<StealthPercent>().stealth = true;
+			// This is for the LightRaycast script. So if the player is inside a box inside of a lightraycast, then they're considered hidden 
+			inBox = true;
+
 		}
 		
 	}
@@ -32,6 +35,7 @@ public class Hidden : MonoBehaviour {
 	void OnTriggerExit ( Collider exiter ) {
 		// "null" means nothing, empty, anscence of anything
 		thingCurrentlyInside = null;
+		inBox = false;
 		
 	}
 }
