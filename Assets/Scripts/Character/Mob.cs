@@ -64,10 +64,10 @@ public class Mob : MonoBehaviour {
 
 	void Start() {
 		agent = GetComponent<NavMeshAgent>();
-		stop();
-		if( walkOnStart ) {
-			walk();
-		}
+//		stop();
+//		if( walkOnStart ) {
+//			walk();
+//		}
 	}
 
 	// Update is called once per frame
