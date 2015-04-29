@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Hidden : MonoBehaviour {
-
-	Collider thingCurrentlyInside;
-
-	public Transform playerPrefab;   // Assign this in the inspector, then use 'Apply' button to make this the case for all spotlights in the level
-	public Transform boxPrefab;      // this should already be assigned in inspector, but if not, assign StealthBox in this spot. Use 'Apply' to affect all spotlights.
+	
+	public List<Collider> allColliders = new List<Collider> ();
+	public Transform boxPrefab;     // assign STEALTHBOX to this in inspector
+	public Transform playerPrefab;  // assign PLAYER to this in inspector
 
 
 	// Use this for initialization
@@ -19,37 +19,34 @@ public class Hidden : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		// if there is a thing currently inside this trigger...
-		if (thingCurrentlyInside != null){
-			// if the player is inside of a box, then the spotlight doesn't see them
-//			if (boxPrefab.GetComponent<pickupItem>().inBox == true){
-//				playerPrefab.GetComponent<StealthPercent>().isVisible = false;
-//			}
-//			else{
-				// make isVisible TRUE (ENEMY CAN SEE YOU!)
-			thingCurrentlyInside.GetComponent<StealthPercent>().isVisible = true;
-//			}
-
-
+		foreach (var thisCollider in allColliders){
+//		if (thingCurrentlyInside != null && boxPrefab.GetComponent<pickupItem>().inBox != true){
+//			 if the player is inside of a box, then the spotlight doesn't see them
+//				 make isVisible TRUE (ENEMY CAN SEE YOU!)
+			if (boxPrefab.GetComponent<pickupItem>().inBox == true){
+				break;
+			}
+			if (thisCollider.tag == "Player"){
+			thisCollider.GetComponent<PlayerVisibility>().isVisible = true;
+			}
 		}
 
-		
 	}
 	
 	// Unity automatically calls this function when an object using a Rigidbody
 	// enters this object's trigger-collider AND it will tell you what entered it
 	void OnTriggerEnter ( Collider activator ) {
 		
-		thingCurrentlyInside = activator; // want to remember the thing that entered the trigger
+		allColliders.Add(activator); // want to remember the thing that entered the trigger
 		
 	}
 	
 	void OnTriggerExit ( Collider exiter ) {
 		// "null" means nothing, empty, anscence of anything
-		thingCurrentlyInside = null;
+		allColliders.Remove(exiter);
 		// Make isVisible FALSE (You're totally invisible)
-		playerPrefab.GetComponent<StealthPercent>().isVisible = false;
-
-		
+		if (exiter.tag == "Player"){
+		exiter.GetComponent<PlayerVisibility>().isVisible = false;
+		}
 	}
 }

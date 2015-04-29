@@ -11,7 +11,6 @@ GameObject:
   - 33: {fileID: 3341708}
   - 65: {fileID: 6508324}
   - 23: {fileID: 2339354}
-  - 114: {fileID: 11405838}
   - 114: {fileID: 11435990}
   m_Layer: 0
   m_Name: StealthBox
@@ -75,18 +74,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11405838
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 173616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8641ddb8fde2040d89285f5c8963d3b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inBox: 0
 --- !u!114 &11435990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  playerPrefab: {fileID: 0}
+  inBox: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
