@@ -11,6 +11,7 @@ public class Scanner : MonoBehaviour {
 	public bool hasCaughtTarget;
 
 	[Header("Balance")]
+	public bool onlyAggroIfCanBeSeen;
 	public float sightRange;
 	public float visionConeAngle;
 
@@ -18,6 +19,8 @@ public class Scanner : MonoBehaviour {
 
 
 	public bool sees( GameObject target ){
+		if( onlyAggroIfCanBeSeen && !GetComponent<Renderer>().isVisible )
+			return false;
 		Vector3 vectorToPlayer = target.transform.position - transform.position;
 		bool isCloseEnough = vectorToPlayer.magnitude < sightRange;
 		bool isInViewCone = false;
@@ -71,7 +74,7 @@ public class Scanner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if( sees( target.gameObject ) ) {
+		if( !aggressing && sees( target.gameObject ) ) {
 			if( GetComponent<WalkOnRoute>() != null ) {
 				GetComponent<WalkOnRoute>().interrupt( true );
 			}

@@ -47,10 +47,13 @@ public class FirstPersonCameraControl : MonoBehaviour {
 		if( cam.inTransition )
 			return;
 		Cursor.lockState = CursorLockMode.Confined;
-		controlEnabled = false;
-		GetComponent<OverheadPlayerControl>().controlEnabled = true;
+
+
 		cam.switchToGame();
+		GetComponent<OverheadPlayerControl>().controlEnabled = false;
+		StartCoroutine( "waitToChangeControl", false );
 	}
+	
 
 	public void changeToCam( bool rotateToMouse = true) {
 		if( cam.inTransition )
@@ -62,10 +65,16 @@ public class FirstPersonCameraControl : MonoBehaviour {
 				cam.transform.LookAt( rayHit.point );
 			}
 		}
-		controlEnabled = true;
-		GetComponent<OverheadPlayerControl>().controlEnabled = false;
+		controlEnabled = false;
 		cam.switchToPhoto();
 		Cursor.lockState = CursorLockMode.Locked;
+		StartCoroutine( "waitToChangeControl", true );
+	}
+
+	IEnumerator waitToChangeControl( bool changeTo ) {
+		yield return new WaitForSeconds (cam.transitionTime );
+		controlEnabled = changeTo;
+		GetComponent<OverheadPlayerControl>().controlEnabled = !changeTo;
 	}
 }
 

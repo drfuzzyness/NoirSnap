@@ -8,8 +8,11 @@ public class Chaser : MonoBehaviour {
 //	public ParticipantManager participantManager;
 	public float catchRange;
 	public float delayBeforeChase;
+	public float delayAfterChase;
 	public List<GameObject> informOnVision;
+	public GameObject lastSeenMarkerPrefab;
 
+	private GameObject lastSeen;
 	private Scanner scan;
 	private WalkOnRoute router;
 	private Mob mb;
@@ -41,8 +44,25 @@ public class Chaser : MonoBehaviour {
 			yield return null;
 		}
 //		target.SendMessage("calm");
-		scan.deaggro();
+		StartCoroutine( "chaseToLastVisible", target );
 		
+	}
+
+	IEnumerator chaseToLastVisible( GameObject target ) {
+		Vector3 targetPos = target.transform.position;
+		lastSeen = Instantiate( lastSeenMarkerPrefab, targetPos, transform.rotation * Quaternion.Euler( 90f, 0f, 0f ) ) as GameObject;
+		mb.setDestination( target.transform.position );
+		while( GetComponent<NavMeshAgent>().remainingDistance > 0.01f ) {
+			if( scan.sees( target ) ) {
+				startAggro( target );
+				Destroy( lastSeen );
+				yield break;
+			}
+			yield return null;
+		}
+		yield return new WaitForSeconds( delayAfterChase );
+		scan.deaggro();
+		Destroy( lastSeen );
 	}
 
 	// Use this for initialization
