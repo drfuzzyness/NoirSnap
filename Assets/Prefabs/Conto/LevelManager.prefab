@@ -34,7 +34,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &109954
 GameObject:
   m_ObjectHideFlags: 1
@@ -302,10 +302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8284f47d4d38c4bf585962a2cd38628a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDurationOfGameoverScreen: 0
+  minDurationOfGameoverScreen: 5
   gameoverScreen: {fileID: 176020}
   playerVictoryScreen: {fileID: 109350}
-  nextLevelIndex: 0
+  nextLevelIndex: 5
 --- !u!114 &11473342
 MonoBehaviour:
   m_ObjectHideFlags: 1
