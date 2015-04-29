@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StealthPercent : MonoBehaviour {
+public class PlayerVisibility : MonoBehaviour {
 
 	public bool isVisible = true;
 
@@ -14,7 +14,6 @@ public class StealthPercent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-//		isVisible = false;
+	
 	}
 }

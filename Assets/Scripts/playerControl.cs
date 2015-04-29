@@ -37,12 +37,6 @@ public class playerControl : MonoBehaviour {
 
 		}
 
-		if (Input.GetKeyDown(KeyCode.E)){
-			if (pickupItem.OnObject){
-				Destroy (itemBox);
-				text.text = "You have the item!";
-			}
-		}
 
 
 	}
