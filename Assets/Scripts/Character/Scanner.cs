@@ -5,24 +5,25 @@ using System.Collections;
 public class Scanner : MonoBehaviour {
 
 	public Mob target;
-//	public StealthPercent stealth;
+	public PlayerVisibility stealth;
 
 	[Header("State")]
 	public bool aggressing;
 	public bool hasCaughtTarget;
+	public float sightRange;
 
 	[Header("Balance")]
 	public bool requireLightToSee;
 	public bool onlyAggroIfCanBeSeen;
-	public float sightRange;
+	public float baseSightRange;
+	public float spotlightSightRange;
 	public float visionConeAngle;
 
 	private WalkOnRoute walker;
 
 
 	public bool sees( GameObject target ){
-//		if( requireLightToSee && !stealth.isVisible ) 
-//			return false;
+
 		if( onlyAggroIfCanBeSeen && !GetComponent<Renderer>().isVisible )
 			return false;
 		Vector3 vectorToPlayer = target.transform.position - transform.position;
@@ -78,6 +79,11 @@ public class Scanner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if( requireLightToSee && !stealth.isVisible ) {
+			sightRange = baseSightRange;
+		} else if ( requireLightToSee && stealth.isVisible ) {
+			sightRange = spotlightSightRange;
+		}
 		if( !aggressing && sees( target.gameObject ) ) {
 			if( GetComponent<WalkOnRoute>() != null ) {
 				GetComponent<WalkOnRoute>().interrupt( true );
