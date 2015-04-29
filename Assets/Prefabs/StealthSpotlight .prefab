@@ -134,8 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8641ddb8fde2040d89285f5c8963d3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allColliders: []
+  boxPrefab: {fileID: 0}
   playerPrefab: {fileID: 0}
-  boxPrefab: {fileID: 474470, guid: 32eebe33f83474e77863024137dea578, type: 2}
 --- !u!135 &13522832
 SphereCollider:
   m_ObjectHideFlags: 1
