@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a0a2b49e0c84f6e83452a63ce8f5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catchRange: 1
+  catchRange: 2
   delayBeforeChase: 1
   delayAfterChase: 2
   informOnVision: []

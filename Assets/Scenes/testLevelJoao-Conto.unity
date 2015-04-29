@@ -126,14 +126,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11488890, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
-      propertyPath: nextWayPoint
-      value: 
-      objectReference: {fileID: 1788888931}
     - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
       propertyPath: target
       value: 
       objectReference: {fileID: 2057307300}
+    - target: {fileID: 11488890, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: nextWayPoint
+      value: 
+      objectReference: {fileID: 1788888931}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -10738,12 +10738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d987a69a5bcd408088d3bdfa22f08fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelayBeforeAggro: 2
-  canBeSeen: 0
-  inDirectSight: 0
-  transitioning: 0
-  inStealth: 0
-  stealthPercent: 0
 --- !u!114 &2057307300
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11435648, guid: 164bace21d158428f8f10ea3bae36708,
