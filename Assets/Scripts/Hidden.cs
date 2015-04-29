@@ -4,9 +4,15 @@ using System.Collections;
 public class Hidden : MonoBehaviour {
 
 	Collider thingCurrentlyInside;
-	public bool inBox = false;
+
+	public Transform playerPrefab;   // Assign this in the inspector, then use 'Apply' button to make this the case for all spotlights in the level
+	public Transform boxPrefab;      // this should already be assigned in inspector, but if not, assign StealthBox in this spot. Use 'Apply' to affect all spotlights.
+
+
 	// Use this for initialization
 	void Start () {
+
+		GetComponent<MeshRenderer>().enabled = false;
 
 	}
 	
@@ -15,12 +21,18 @@ public class Hidden : MonoBehaviour {
 
 		// if there is a thing currently inside this trigger...
 		if (thingCurrentlyInside != null){
-			// make it's hidden stealth value TRUE (It's totally hiding, bro.)
-			thingCurrentlyInside.GetComponent<StealthPercent>().stealth = true;
-			// This is for the LightRaycast script. So if the player is inside a box inside of a lightraycast, then they're considered hidden 
-			inBox = true;
+			// if the player is inside of a box, then the spotlight doesn't see them
+//			if (boxPrefab.GetComponent<pickupItem>().inBox == true){
+//				playerPrefab.GetComponent<StealthPercent>().isVisible = false;
+//			}
+//			else{
+				// make isVisible TRUE (ENEMY CAN SEE YOU!)
+			thingCurrentlyInside.GetComponent<StealthPercent>().isVisible = true;
+//			}
+
 
 		}
+
 		
 	}
 	
@@ -35,7 +47,9 @@ public class Hidden : MonoBehaviour {
 	void OnTriggerExit ( Collider exiter ) {
 		// "null" means nothing, empty, anscence of anything
 		thingCurrentlyInside = null;
-		inBox = false;
+		// Make isVisible FALSE (You're totally invisible)
+		playerPrefab.GetComponent<StealthPercent>().isVisible = false;
+
 		
 	}
 }
