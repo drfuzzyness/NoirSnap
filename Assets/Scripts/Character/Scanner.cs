@@ -5,12 +5,14 @@ using System.Collections;
 public class Scanner : MonoBehaviour {
 
 	public Mob target;
+//	public StealthPercent stealth;
 
 	[Header("State")]
 	public bool aggressing;
 	public bool hasCaughtTarget;
 
 	[Header("Balance")]
+	public bool requireLightToSee;
 	public bool onlyAggroIfCanBeSeen;
 	public float sightRange;
 	public float visionConeAngle;
@@ -19,6 +21,8 @@ public class Scanner : MonoBehaviour {
 
 
 	public bool sees( GameObject target ){
+//		if( requireLightToSee && !stealth.isVisible ) 
+//			return false;
 		if( onlyAggroIfCanBeSeen && !GetComponent<Renderer>().isVisible )
 			return false;
 		Vector3 vectorToPlayer = target.transform.position - transform.position;
