@@ -7,6 +7,7 @@ public class Evidence : MonoBehaviour {
 	[Header("Status")]
 	public bool collected = false;
 
+	public float value = 0f;
 	[Header("Setup")]
 	public bool hideOnCollect = false;
 	public List<GameObject> informOnCollect;
