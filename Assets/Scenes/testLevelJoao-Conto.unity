@@ -3280,6 +3280,10 @@ Prefab:
       propertyPath: m_Name
       value: Generic Enemy 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13607988, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -4146,6 +4150,10 @@ Prefab:
       propertyPath: walkOnStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13607988, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -4552,6 +4560,10 @@ Prefab:
       propertyPath: m_Name
       value: Generic Enemy 2
       objectReference: {fileID: 0}
+    - target: {fileID: 13607988, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -4669,6 +4681,10 @@ Prefab:
     - target: {fileID: 176646, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
       propertyPath: m_Name
       value: Generic Enemy 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 13607988, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
@@ -6124,6 +6140,10 @@ Prefab:
       propertyPath: m_Name
       value: Generic Enemy 7
       objectReference: {fileID: 0}
+    - target: {fileID: 13607988, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -6534,6 +6554,10 @@ Prefab:
       propertyPath: m_Name
       value: Generic Enemy 3
       objectReference: {fileID: 0}
+    - target: {fileID: 13607988, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -6934,6 +6958,10 @@ Prefab:
     - target: {fileID: 176646, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
       propertyPath: m_Name
       value: Generic Enemy 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 13607988, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
@@ -10886,6 +10914,10 @@ Prefab:
       propertyPath: m_Name
       value: Generic Enemy 4
       objectReference: {fileID: 0}
+    - target: {fileID: 13607988, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -11108,6 +11140,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11417600, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
       propertyPath: walkOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13607988, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
