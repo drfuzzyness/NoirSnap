@@ -9,6 +9,7 @@ TagManager:
   - Cop
   - Collectable
   - Box
+  - Light
   layers:
   - Default
   - TransparentFX
