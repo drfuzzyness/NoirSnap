@@ -86,7 +86,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: .166666672
     manualCellSize: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: c93b5ea80404d49d1aacc2e1a015c118, type: 2}
 --- !u!1001 &14234476
 Prefab:
   m_ObjectHideFlags: 0
@@ -4086,6 +4086,10 @@ Prefab:
       propertyPath: walkOnStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2057307300}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -5941,6 +5945,10 @@ Prefab:
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 491562, guid: 164bace21d158428f8f10ea3bae36708, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.11800003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 164bace21d158428f8f10ea3bae36708, type: 2}
   m_IsPrefabParent: 0
@@ -7456,7 +7464,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1352425602}
-  m_LocalRotation: {x: .509892583, y: .174244002, z: -.775504947, w: .328999281}
+  m_LocalRotation: {x: .509892642, y: .174244016, z: -.775505006, w: .328999311}
   m_LocalPosition: {x: -44.1699982, y: 2.48000002, z: -61.9399986}
   m_LocalScale: {x: .481067002, y: .481066495, z: .481066495}
   m_Children: []
@@ -10636,6 +10644,26 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1099226477}
   m_Script: {fileID: 11500000, guid: 7a71b6f2a0369473a81da1b901b5f41e, type: 3}
+--- !u!195 &2057307309
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057307296}
+  m_Enabled: 1
+  m_Radius: .5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &2058228979
 Transform:
   m_PrefabParentObject: {fileID: 428660, guid: 6fc5d062ae9024073ac7d836d1536462, type: 2}
@@ -11012,6 +11040,10 @@ Prefab:
       propertyPath: walkOnStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11458030, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2057307300}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d1bcfff54bb45b0a9d27b049c74cd0, type: 2}
   m_IsPrefabParent: 0
@@ -11089,6 +11121,10 @@ Prefab:
     - target: {fileID: 184126, guid: 2d01114730ea34ad5887d30c576c313b, type: 2}
       propertyPath: m_Name
       value: Intro Dialogue trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309154, guid: 2d01114730ea34ad5887d30c576c313b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d01114730ea34ad5887d30c576c313b, type: 2}

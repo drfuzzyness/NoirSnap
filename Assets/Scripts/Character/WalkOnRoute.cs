@@ -21,7 +21,7 @@ public class WalkOnRoute : MonoBehaviour {
 
 	public void startTransit() {
 		if( nextWayPoint == null ) {
-			Debug.LogError( gameObject + " doesn't have a next waypoint." );
+			Debug.LogWarning( gameObject + " doesn't have a next waypoint." );
 			return;
 		}
 		inTransit = true;
@@ -30,10 +30,10 @@ public class WalkOnRoute : MonoBehaviour {
 	}
 
 	IEnumerator transit() {
-
+		mob.setDestination( nextWayPoint.transform.position );
+		mob.walk();
 		while( inTransit ) {
-			mob.turnToFace( nextWayPoint.transform );
-			mob.walk();
+//			mob.turnToFace( nextWayPoint.transform );
 			yield return null;
 		}
 	}
@@ -41,6 +41,7 @@ public class WalkOnRoute : MonoBehaviour {
 	public void interrupt( bool forceInterruption = false ) {
 		if( allowInterruption || forceInterruption ) {
 //			Debug.Log( gameObject.name + "'s path has been interrupted." );
+			mob.stop();
 			inTransit = false;
 			StopCoroutine( transit() );
 		}

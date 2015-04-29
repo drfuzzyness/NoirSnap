@@ -12,25 +12,26 @@ public class Chaser : MonoBehaviour {
 
 	private Scanner scan;
 	private WalkOnRoute router;
+	private Mob mb;
 
 	public void startAggro( GameObject target ) {
 			Debug.Log ( gameObject.name + " is chasing " + target );
 			scan.aggressing = true;
-			GetComponent<Mob>().run();
+//			GetComponent<Mob>().run();
 			StartCoroutine( "chase", target );
 	}
 
 	public void stopAggro() {
 		scan.aggressing = false;
-		GetComponent<Mob>().walk();
+		mb.walk();
 		StopCoroutine( "chase" );
 	}
 
 	IEnumerator chase( GameObject target ) {
 		while( scan.aggressing && scan.sees ( target ) ) {
 			Vector3 vectorToHunted = target.transform.position - transform.position;
-			GetComponent<Mob>().turnToFace( target.transform );
-			GetComponent<Mob>().run();
+			mb.setDestination( target.transform.position );
+			mb.run();
 			if(  vectorToHunted.magnitude < catchRange ) {
 				Debug.Log( gameObject.name + " has caught " + target.name );
 				target.SendMessage( "caught", gameObject );
@@ -48,6 +49,7 @@ public class Chaser : MonoBehaviour {
 	void Start () {
 		scan = GetComponent<Scanner>();
 		router = GetComponent<WalkOnRoute>();
+		mb = GetComponent<Mob>();
 	}
 	
 	// Update is called once per frame
