@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -13,11 +13,11 @@ public class DisplayStealthPercent : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 
 		string textBuffer = "";
 
-		textBuffer = "Hidden: " + playerPrefab.GetComponent<StealthPercent>().stealth.ToString();
+		textBuffer = "The Enemy Can See You: " + playerPrefab.GetComponent<StealthPercent>().isVisible.ToString();
 
 		GetComponent<Text>().text = textBuffer;
 

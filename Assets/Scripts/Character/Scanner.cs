@@ -11,6 +11,7 @@ public class Scanner : MonoBehaviour {
 	public bool hasCaughtTarget;
 
 	[Header("Balance")]
+	public bool onlyAggroIfCanBeSeen;
 	public float sightRange;
 	public float visionConeAngle;
 
@@ -18,6 +19,8 @@ public class Scanner : MonoBehaviour {
 
 
 	public bool sees( GameObject target ){
+		if( onlyAggroIfCanBeSeen && !GetComponent<Renderer>().isVisible )
+			return false;
 		Vector3 vectorToPlayer = target.transform.position - transform.position;
 		bool isCloseEnough = vectorToPlayer.magnitude < sightRange;
 		bool isInViewCone = false;
@@ -46,6 +49,7 @@ public class Scanner : MonoBehaviour {
 		if( !aggressing ) {
 			Debug.Log( "Starting Aggro" );
 			aggressing = true;
+			target.SendMessage( "seenBy", gameObject );
 			SendMessage( "startAggro", theTarget );
 			walker.interrupt();
 		}
@@ -55,6 +59,7 @@ public class Scanner : MonoBehaviour {
 		if( aggressing ) {
 			Debug.Log( "Stopping Aggro" );
 			aggressing = false;
+			target.SendMessage( "noLongerSeenBy", gameObject );
 			SendMessage( "stopAggro" );
 			walker.startTransit();
 		}
@@ -69,11 +74,11 @@ public class Scanner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if( sees( target.gameObject ) ) {
+		if( !aggressing && sees( target.gameObject ) ) {
 			if( GetComponent<WalkOnRoute>() != null ) {
 				GetComponent<WalkOnRoute>().interrupt( true );
-				aggro( target.gameObject );
 			}
+			aggro( target.gameObject );
 		}
 	}
 }

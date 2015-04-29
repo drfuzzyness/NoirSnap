@@ -12,6 +12,7 @@ public class Evidence : MonoBehaviour {
 	public List<GameObject> informOnCollect;
 
 	public void collect() {
+
 		if( !collected ) {
 			gameObject.SendMessage( "OnCollected" );
 			foreach( GameObject thisObj in informOnCollect ) {

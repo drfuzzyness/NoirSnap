@@ -5,6 +5,7 @@ using System.Collections;
 public class OverheadPlayerControl : MonoBehaviour {
 
 	public bool controlEnabled = true;
+	public bool isMoving;
 
 	private Mob mb;
 	private Rigidbody rbody;
@@ -16,10 +17,15 @@ public class OverheadPlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if( controlEnabled ) {
 			rbody.MovePosition( transform.position 
 			                   + transform.right * mb.walkSpeed * Time.deltaTime * Input.GetAxis( "Horizontal" )
 			                   + transform.forward * mb.walkSpeed * Time.deltaTime * Input.GetAxis( "Vertical" ) );
+			isMoving = true;
+		}
+		else {
+			isMoving = false;
 		}
 	}
 }
