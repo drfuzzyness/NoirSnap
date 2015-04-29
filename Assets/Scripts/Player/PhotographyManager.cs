@@ -41,7 +41,7 @@ public class PhotographyManager : MonoBehaviour {
 				Debug.Log( gameObject.name + " sees " + thisObj.gameObject.name );
 				thisObj.SendMessage( "OnPhotographed" ); // Calls all functions in all components on the object with name void OnPhotographed()
 			} else {
-				Debug.Log( gameObject.name + " can't see " + thisObj.gameObject.name );
+//				Debug.Log( gameObject.name + " can't see " + thisObj.gameObject.name );
 			}
 		}
 	}
@@ -74,9 +74,11 @@ public class PhotographyManager : MonoBehaviour {
 	IEnumerator switchToPhotoWait() {
 		inTransition = true;
 		iTween.CameraFadeTo( 1f, transitionTime/2 );
+		iTween.MoveTo( mainCamera.gameObject, transform.position, transitionTime );
+		iTween.RotateTo( mainCamera.gameObject, transform.eulerAngles, transitionTime );
 		yield return new WaitForSeconds( transitionTime/2 );
-		mainCamera.transform.position = transform.position;
-		mainCamera.transform.rotation = transform.rotation;
+//		mainCamera.transform.position = transform.position;
+//		mainCamera.transform.rotation = transform.rotation;
 		iTween.CameraFadeTo( 0f, transitionTime/2 );
 		yield return new WaitForSeconds( transitionTime/2 );
 		inPhotographyMode = true;
@@ -86,11 +88,12 @@ public class PhotographyManager : MonoBehaviour {
 	IEnumerator switchToGameWait() {
 		inTransition = true;
 		inPhotographyMode = false;
-
+		iTween.MoveTo( mainCamera.gameObject, mainCameraPositionObject.position, transitionTime );
+		iTween.RotateTo( mainCamera.gameObject, mainCameraPositionObject.eulerAngles, transitionTime );
 		iTween.CameraFadeTo( 1f, transitionTime/2 );
 		yield return new WaitForSeconds( transitionTime/2 );
-		mainCamera.transform.position = mainCameraPositionObject.position;
-		mainCamera.transform.rotation = mainCameraPositionObject.rotation;
+//		mainCamera.transform.position = mainCameraPositionObject.position;
+//		mainCamera.transform.rotation = mainCameraPositionObject.rotation;
 		iTween.CameraFadeTo( 0f, transitionTime/2 );
 		yield return new WaitForSeconds( transitionTime/2 );
 		inTransition = false;

@@ -3,19 +3,18 @@ using System.Collections;
 
 public class StealthPercent : MonoBehaviour {
 
-	public bool stealth = true;
+	public bool isVisible = true;
 
 	// Use this for initialization
 	void Start () {
 
-		stealth = true;
+		isVisible = false;
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-
-	
+//		isVisible = false;
 	}
 }

@@ -7,14 +7,10 @@ public class ParticipantManager : MonoBehaviour {
 	public GameObject player;
 	public List<Character> characters;
 	public List<Photographable> photographables;
+	public static ParticipantManager instance;
 
 	// Use this for initialization
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		instance = this;
 	}
 }

@@ -6,9 +6,16 @@ public class pickupItem : MonoBehaviour {
 	
 	Collider item;
 	Collider playerInside;
+
+
 	public Text text;
+
+
 	public static GameObject OnObject;
 	public Transform playerPrefab;
+
+
+	public bool inBox = false;
 	bool attached = false;
 
 	void Start(){
@@ -20,7 +27,6 @@ public class pickupItem : MonoBehaviour {
 
 		if (playerInside != null){
 
-			text.text = "Press [E] to pick up item";
 			//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING
 			//text.text = "Press [E] to pick up" + itemName;
 
@@ -28,11 +34,17 @@ public class pickupItem : MonoBehaviour {
 
 				//Code where item is added to list player can access
 				transform.parent = playerPrefab.transform;
+				playerInside.GetComponent<StealthPercent>().isVisible = false;
 				attached = true;
+				text.text = "Press [E] to drop item";
+				inBox = true;
 			}
 			else if (Input.GetKeyDown(KeyCode.E) && attached == true){
 				transform.parent = null;
+				playerInside.GetComponent<StealthPercent>().isVisible = true;
 				attached = false;
+				text.text = "Press [E] to pick up item";
+				inBox = false;
 			}
 
 		}

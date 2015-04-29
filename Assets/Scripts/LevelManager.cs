@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour {
 	public float minDurationOfGameoverScreen;
 	public GameObject gameoverScreen;
 	public GameObject playerVictoryScreen;
+	public static LevelManager instance;
 
 	public int nextLevelIndex;
 
@@ -43,11 +44,6 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		instance = this;
 	}
 }
