@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 
-public class DisplayStealthPercent : MonoBehaviour {
+public class DisplayVisibility : MonoBehaviour {
 
 	public Transform playerPrefab;
 
@@ -17,7 +17,7 @@ public class DisplayStealthPercent : MonoBehaviour {
 
 		string textBuffer = "";
 
-		textBuffer = "The Enemy Can See You: " + playerPrefab.GetComponent<StealthPercent>().isVisible.ToString();
+		textBuffer = "The Enemy Can See You: " + playerPrefab.GetComponent<PlayerVisibility>().isVisible.ToString();
 
 		GetComponent<Text>().text = textBuffer;
 

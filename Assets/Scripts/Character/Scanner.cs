@@ -4,21 +4,26 @@ using System.Collections;
 [RequireComponent (typeof (Mob))]
 public class Scanner : MonoBehaviour {
 
-	public Mob target;
+
+//	public PlayerVisibility stealth;
 
 	[Header("State")]
 	public bool aggressing;
 	public bool hasCaughtTarget;
+	public float sightRange;
 
 	[Header("Balance")]
+	public bool requireLightToSee;
 	public bool onlyAggroIfCanBeSeen;
-	public float sightRange;
+	public float baseSightRange;
+	public float spotlightSightRange;
 	public float visionConeAngle;
 
 	private WalkOnRoute walker;
-
+	private Mob target;
 
 	public bool sees( GameObject target ){
+
 		if( onlyAggroIfCanBeSeen && !GetComponent<Renderer>().isVisible )
 			return false;
 		Vector3 vectorToPlayer = target.transform.position - transform.position;
@@ -49,7 +54,7 @@ public class Scanner : MonoBehaviour {
 		if( !aggressing ) {
 			Debug.Log( "Starting Aggro" );
 			aggressing = true;
-			target.SendMessage( "seenBy", gameObject );
+			theTarget.SendMessage( "seenBy", gameObject );
 			SendMessage( "startAggro", theTarget );
 			walker.interrupt();
 		}
@@ -70,10 +75,16 @@ public class Scanner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		walker = GetComponent<WalkOnRoute>();
+		target = ParticipantManager.instance.player.GetComponent<Mob>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if( requireLightToSee && !PlayerVisibility.instance.isVisible ) {
+			sightRange = baseSightRange;
+		} else if ( requireLightToSee && PlayerVisibility.instance.isVisible ) {
+			sightRange = spotlightSightRange;
+		}
 		if( !aggressing && sees( target.gameObject ) ) {
 			if( GetComponent<WalkOnRoute>() != null ) {
 				GetComponent<WalkOnRoute>().interrupt( true );

@@ -1,80 +1,72 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 using UnityEngine.UI;
 
 public class pickupItem : MonoBehaviour {
-	
-	Collider item;
-	Collider playerInside;
-
 
 	public Text text;
-
-
-	public static GameObject OnObject;
-	public Transform playerPrefab;
-
-
+//	public static GameObject OnObject;
+	public Transform playerPrefab;        // ASSIGN IN INSPECTOR Ayyyyy
 	public bool inBox = false;
 	bool attached = false;
 
+	public  List<Collider> allThingsInBox = new List<Collider> ();
+
+
+
 	void Start(){
 		text.text = "";
+
 	}
 
 
 	void Update(){
 
-		if (playerInside != null){
 
-			//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING
-			//text.text = "Press [E] to pick up" + itemName;
+		foreach (var thisThingInBox in allThingsInBox){
+//		if (playerInside != null){			//text.text = "Press [E] to pick up" + itemName;
+
+			if (thisThingInBox.tag == "Player"){
+
 
 			if (Input.GetKeyDown(KeyCode.E) && attached == false){
 
 				//Code where item is added to list player can access
+				playerPrefab.GetComponent<MeshRenderer>().enabled = false;
 				transform.parent = playerPrefab.transform;
-				playerInside.GetComponent<StealthPercent>().isVisible = false;
 				attached = true;
 				text.text = "Press [E] to drop item";
 				inBox = true;
 			}
 			else if (Input.GetKeyDown(KeyCode.E) && attached == true){
+				playerPrefab.GetComponent<MeshRenderer>().enabled = true;
 				transform.parent = null;
-				playerInside.GetComponent<StealthPercent>().isVisible = true;
 				attached = false;
 				text.text = "Press [E] to pick up item";
 				inBox = false;
+				}
 			}
-
 		}
-
-
 	}
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerEnter(Collider activator) {
 
 
-		if(other.tag == "Player")
-		{
-			text.text = "Press [E] to pick up item";
-			OnObject = other.gameObject;
-		}//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING
-		//text.text = "Press [E] to pick up" + itemName
+		allThingsInBox.Add(activator);
+		text.text = "Press [E] to pick up item";
 
-		playerInside = other;
-
-
-		OnObject = other.gameObject;
-	
-
+		//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING
+//		//text.text = "Press [E] to pick up" + itemName
+//		OnObject = other.gameObject;
 	}
 	
 	void OnTriggerExit(Collider exiter) {
 		text.text = "";
-		playerInside = null;
+		allThingsInBox.Remove(exiter);
 
 
-		if (OnObject == this.gameObject) OnObject = null;
+//		if (OnObject == this.gameObject) OnObject = null;
 
 	}
 

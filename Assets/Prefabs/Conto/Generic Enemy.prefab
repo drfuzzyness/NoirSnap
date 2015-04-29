@@ -15,8 +15,6 @@ GameObject:
   - 114: {fileID: 11417600}
   - 114: {fileID: 11488890}
   - 114: {fileID: 11458030}
-  - 114: {fileID: 11457194}
-  - 114: {fileID: 11458112}
   - 114: {fileID: 11441324}
   - 114: {fileID: 11408426}
   - 195: {fileID: 19573022}
@@ -185,23 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a0a2b49e0c84f6e83452a63ce8f5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catchRange: 1
+  catchRange: 2
   delayBeforeChase: 1
   delayAfterChase: 2
   informOnVision: []
   lastSeenMarkerPrefab: {fileID: 102396, guid: ac288b46eeb1448eeb67bcab7f28ecf6, type: 2}
---- !u!114 &11457194
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53d0e5047551f454fb7cb1305487b555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seen: 0
 --- !u!114 &11458030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,25 +199,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39788e999dab499dbebfecbbd12fff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  stealth: {fileID: 0}
   aggressing: 0
   hasCaughtTarget: 0
-  onlyAggroIfCanBeSeen: 1
   sightRange: 20
+  requireLightToSee: 0
+  onlyAggroIfCanBeSeen: 1
+  baseSightRange: 10
+  spotlightSightRange: 30
   visionConeAngle: 60
---- !u!114 &11458112
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00aa0f5895ce540ac96150bfd98a4550, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oppinionOnInnocence: 0
-  innocent: 1
 --- !u!114 &11488890
 MonoBehaviour:
   m_ObjectHideFlags: 1
