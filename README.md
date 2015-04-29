@@ -11,3 +11,7 @@ A detective game of stealth and photography.
 - Richard Campbell
 - Pear Yam
 - Shaun Bandrowski
+
+![](https://raw.githubusercontent.com/drfuzzyness/NoirSnap/conto/Marketing/dialogue.gif)
+
+![](https://raw.githubusercontent.com/drfuzzyness/NoirSnap/conto/Marketing/damn-whered-you-go.gif)
