@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 44059880225d9ed4f961157cb124f598
-timeCreated: 1429556780
+guid: 99f9f671ba3d041cf87f9b4087e9c222
+timeCreated: 1430271124
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube1
-    9500000: //RootNode
+    4300000: carBody2
   materials:
     importMaterials: 1
     materialName: 0
@@ -30,7 +29,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .75
+    globalScale: 60
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -64,7 +63,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
