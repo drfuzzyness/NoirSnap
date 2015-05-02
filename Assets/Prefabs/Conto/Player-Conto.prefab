@@ -71,7 +71,7 @@ GameObject:
   - 195: {fileID: 19538046}
   m_Layer: 0
   m_Name: Player-Conto
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,8 +97,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136412}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -34.0600014, y: 0, z: -34.4199982}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 483194}
@@ -112,7 +112,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190770}
-  m_LocalRotation: {x: -.72138685, y: -.00249045971, z: .00260862126, w: -.692523003}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 0, y: 17.7999992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -125,7 +125,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134448}
-  m_LocalRotation: {x: -.72138685, y: -.00249045971, z: .00260862126, w: -.692523003}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 0, y: 17.7999992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
