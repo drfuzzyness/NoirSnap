@@ -30,7 +30,7 @@ public class LightRaycast : MonoBehaviour {
 			if (obstacles[i].collider.tag == "Player"){
 
 				// if one of them is the player, set the stealth status to false
-				playerPrefab.GetComponent<StealthPercent>().isVisible = true;
+				playerPrefab.GetComponent<PlayerVisibility>().isVisible = true;
 
 				// HOWEVER, if the player is currently inside of a box then, they are considered HIDDEN even though they're in the spotlight's raycast
 //				if (boxPrefab.GetComponent<Hidden>().inBox == true){
