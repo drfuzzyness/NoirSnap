@@ -12,8 +12,8 @@ public class pickupItem : MonoBehaviour {
 	public bool inBox = false;
 	bool attached = false;
 
-	public  List<Collider> allThingsInBox = new List<Collider> ();
 
+	public  List<Collider> allThingsInBox = new List<Collider> ();
 
 
 	void Start(){
@@ -39,6 +39,7 @@ public class pickupItem : MonoBehaviour {
 				attached = true;
 				text.text = "Press [E] to drop item";
 				inBox = true;
+				
 			}
 			else if (Input.GetKeyDown(KeyCode.E) && attached == true){
 				playerPrefab.GetComponent<MeshRenderer>().enabled = true;
@@ -54,7 +55,6 @@ public class pickupItem : MonoBehaviour {
 
 
 		allThingsInBox.Add(activator);
-		text.text = "Press [E] to pick up item";
 
 		//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING
 //		//text.text = "Press [E] to pick up" + itemName
