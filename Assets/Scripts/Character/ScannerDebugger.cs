@@ -17,8 +17,8 @@ public class ScannerDebugger : MonoBehaviour {
 	}
 
 	void OnDrawGizmos() {
-		if( GetComponent<Scanner>().sees( GetComponent<Scanner>().target.gameObject ) ) {
-			Gizmos.DrawLine( transform.position, GetComponent<Scanner>().target.transform.position );
+		if( GetComponent<Scanner>().sees( ParticipantManager.instance.player ) ) {
+			Gizmos.DrawLine( transform.position, ParticipantManager.instance.player.transform.position );
 		}
 	}
 }
