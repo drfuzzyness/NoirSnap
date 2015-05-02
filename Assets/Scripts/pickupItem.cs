@@ -24,7 +24,6 @@ public class pickupItem : MonoBehaviour {
 
 	void Update(){
 
-
 		foreach (var thisThingInBox in allThingsInBox){
 //		if (playerInside != null){			//text.text = "Press [E] to pick up" + itemName;
 
@@ -52,8 +51,7 @@ public class pickupItem : MonoBehaviour {
 		}
 	}
 	void OnTriggerEnter(Collider activator) {
-
-
+	
 		allThingsInBox.Add(activator);
 
 		//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING
