@@ -9,11 +9,16 @@ public class PlayerVisibility : MonoBehaviour {
 	void Start () {
 
 		isVisible = false;
+
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
+
+
 	
 	}
 }
