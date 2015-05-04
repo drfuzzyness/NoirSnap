@@ -7,7 +7,7 @@ public class EvidenceManager : MonoBehaviour {
 	private float counter = 0f;
 	
 	[Header("Setup")]
-	private List<bool> hasBeenInformed;
+	private bool hasBeenInformed;
 	public List<float> change_state;
 	public List<GameObject> informStateChange;
 
@@ -20,9 +20,10 @@ public class EvidenceManager : MonoBehaviour {
 	void Update () {
 	
 		for (int i = 0; i < change_state.Count; i++) {
-			if (counter >= change_state[i]){
+			if (counter >= change_state[i] && hasBeenInformed == false){
 				gameObject.SendMessage( "StateChanged" );
 				informStateChange[i].SendMessage( "OnCollected" );
+				hasBeenInformed = true;
 			}
 		}
 	}
