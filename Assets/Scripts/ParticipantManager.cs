@@ -10,7 +10,7 @@ public class ParticipantManager : MonoBehaviour {
 	public static ParticipantManager instance;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		instance = this;
 	}
 }
