@@ -19,9 +19,9 @@ public class OverheadPlayerControl : MonoBehaviour {
 	void Update () {
 
 		if( controlEnabled ) {
-			rbody.MovePosition( transform.position 
-			                   + transform.right * mb.walkSpeed * Time.deltaTime * Input.GetAxis( "Horizontal" )
-			                   + transform.forward * mb.walkSpeed * Time.deltaTime * Input.GetAxis( "Vertical" ) );
+			Vector3 movement = transform.right * mb.walkSpeed * Time.deltaTime * Input.GetAxis( "Horizontal" )
+								 + transform.forward * mb.walkSpeed * Time.deltaTime * Input.GetAxis( "Vertical" );
+			rbody.MovePosition( transform.position + movement.normalized * mb.walkSpeed * Time.deltaTime );
 			isMoving = true;
 		}
 		else {

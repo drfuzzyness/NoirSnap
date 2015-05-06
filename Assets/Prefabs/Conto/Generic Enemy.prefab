@@ -48,7 +48,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.1940498, y: 7.04821491, z: 99.0501633}
+  m_LocalPosition: {x: 66.5219116, y: 4.5999999, z: 211.582947}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 455712}
@@ -122,13 +122,13 @@ Light:
   serializedVersion: 6
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.5999999
-  m_Range: 20
+  m_Intensity: 4.5999999
+  m_Range: 10.1999998
   m_SpotAngle: 60
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
+    m_Type: 1
+    m_Resolution: 0
     m_Strength: 1
     m_Bias: .0500000007
     m_NormalBias: .400000006
@@ -199,7 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39788e999dab499dbebfecbbd12fff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stealth: {fileID: 0}
   aggressing: 0
   hasCaughtTarget: 0
   sightRange: 20
