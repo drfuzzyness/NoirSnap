@@ -8,7 +8,7 @@ public class Hidden : MonoBehaviour {
 	public Transform boxPrefab;     // assign STEALTHBOX to this in inspector
 	public Transform playerPrefab;  // assign PLAYER to this in inspector
 
-	Vector3 curPos = new Vector3();
+//	Vector3 curPos = new Vector3();
 
 
 

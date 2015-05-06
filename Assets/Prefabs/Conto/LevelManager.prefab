@@ -302,10 +302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8284f47d4d38c4bf585962a2cd38628a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDurationOfGameoverScreen: 5
+  minDurationOfGameoverScreen: 0
   gameoverScreen: {fileID: 176020}
   playerVictoryScreen: {fileID: 109350}
-  nextLevelIndex: 5
+  nextLevelIndex: 0
 --- !u!114 &11473342
 MonoBehaviour:
   m_ObjectHideFlags: 1
