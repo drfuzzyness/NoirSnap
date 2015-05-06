@@ -10157,7 +10157,7 @@ Transform:
   - {fileID: 243488987}
   - {fileID: 601486909}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1697228874
 GameObject:
   m_ObjectHideFlags: 0
@@ -10420,9 +10420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catchRange: 0
   delayBeforeChase: 0
-  delayAfterChase: 0
   informOnVision: []
-  lastSeenMarkerPrefab: {fileID: 0}
 --- !u!4 &1715059383 stripped
 Transform:
   m_PrefabParentObject: {fileID: 427776, guid: 2d01114730ea34ad5887d30c576c313b, type: 2}
