@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class EvidenceManager : MonoBehaviour {
 
-	private float counter = 0f;
+	public float counter = 0f;
 	
 	[Header("Setup")]
 	public float change_state;
@@ -20,7 +20,7 @@ public class EvidenceManager : MonoBehaviour {
 	void Update () {
 	
 		if (counter >= change_state) {
-			gameObject.SendMessage( "StateChanged" );
+// 			gameObject.SendMessage( "StateChanged" );
 			foreach( GameObject thisObj in informStateChange ) {
 				thisObj.SendMessage( "StateChanged" );
 			}
