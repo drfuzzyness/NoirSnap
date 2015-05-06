@@ -7,6 +7,7 @@ public class pickupItem : MonoBehaviour {
 	Collider item;
 	public Text text;
 	public static GameObject OnObject;
+	public bool inBox;
 
 	void OnTriggerEnter(Collider other) {
 		text.text = "Press [E] to pick up item";
