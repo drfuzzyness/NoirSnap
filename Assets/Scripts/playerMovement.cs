@@ -22,12 +22,12 @@ public class playerMovement : MonoBehaviour {
 		if (Input.GetKey (KeyCode.A)) {
 			transform.position -= transform.right * Time.deltaTime * speed;
 		}
-//		if (Input.GetKey (KeyCode.E)){
-//			if (pickupItem.OnObject){
-//				this.hasItem = true;
-//				Destroy(itemBox);
-//				text.text = "You have the item!";
-//			}
-//		}
+		if (Input.GetKey (KeyCode.E)){
+			if (pickupItem.OnObject){
+				this.hasItem = true;
+				Destroy(itemBox);
+				text.text = "You have the item!";
+			}
+		}
 	}
 }
