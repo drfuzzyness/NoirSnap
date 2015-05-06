@@ -7,6 +7,9 @@ public class Scanner : MonoBehaviour {
 
 //	public PlayerVisibility stealth;
 
+	public Transform boxPrefab; // Assign in inspector
+	public Transform playerPrefab; // Assign in inspector
+
 	[Header("State")]
 	public bool aggressing;
 	public bool hasCaughtTarget;
