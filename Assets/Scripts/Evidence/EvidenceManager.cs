@@ -13,12 +13,13 @@ public class EvidenceManager : MonoBehaviour {
 	public void OnCollected(){
 	
 		counter += GetComponent<Evidence>().value;
+		Debug.Log( "Evidence Manager now has " + counter + " points.");
 
 	}
 	// Update is called once per frame
 	void Update () {
 	
-		if (counter >= change_state){
+		if (counter >= change_state) {
 			gameObject.SendMessage( "StateChanged" );
 			foreach( GameObject thisObj in informStateChange ) {
 				thisObj.SendMessage( "StateChanged" );
