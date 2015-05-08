@@ -30,10 +30,11 @@ public class pickupItem : MonoBehaviour {
 
 
 	void Update(){
-
 		foreach (var thisThingInBox in allThingsInBox){
 
 			if (thisThingInBox.tag == "Player"){
+				text.text = "Press [E] to use item.";
+
 
 				if (Input.GetKeyDown(KeyCode.E) && attached == false){
 					playerPrefab.GetComponent<MeshRenderer>().enabled = false;
@@ -72,7 +73,6 @@ public class pickupItem : MonoBehaviour {
 		}
 	}
 	void OnTriggerEnter(Collider activator) {
-		text.text = "Press [E] to use item.";
 		allThingsInBox.Add(activator);
 
 		//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING
