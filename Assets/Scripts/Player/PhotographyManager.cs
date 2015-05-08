@@ -18,7 +18,7 @@ public class PhotographyManager : MonoBehaviour {
 	public Camera mainCamera;
 	public Transform mainCameraPositionObject;
 	public AnimationCurve transition;
-	public ParticipantManager participantManager;
+// 	public ParticipantManager participantManager;
 
 
 
@@ -36,12 +36,13 @@ public class PhotographyManager : MonoBehaviour {
 	}
 
 	public void snap() {
-		foreach( Photographable thisObj in participantManager.photographables ) {
+		foreach( Photographable thisObj in ParticipantManager.instance.photographables ) {
+// 			Debug.Log("grying to snap " + thisObj);
 			if( canSee( thisObj.transform ) ) {
 				Debug.Log( gameObject.name + " sees " + thisObj.gameObject.name );
 				thisObj.SendMessage( "OnPhotographed" ); // Calls all functions in all components on the object with name void OnPhotographed()
 			} else {
-//				Debug.Log( gameObject.name + " can't see " + thisObj.gameObject.name );
+				Debug.Log( gameObject.name + " can't see " + thisObj.gameObject.name );
 			}
 		}
 	}
@@ -51,14 +52,14 @@ public class PhotographyManager : MonoBehaviour {
 		bool isCloseEnough = vectorToTarget.magnitude < sightRange;
 		bool isInViewCone = false;
 		if( isCloseEnough ) {
-			//			Debug.Log( target + " is close enough" );
+						Debug.Log( target + " is close enough" );
 			isInViewCone = Vector3.Angle( transform.forward, target.position ) < fieldOfView;
 			if( isInViewCone ) {
-				//				Debug.Log( target + " is in view cone enough" );
+								Debug.Log( target + " is in view cone enough" );
 				Ray LOSRay = new Ray( transform.position, vectorToTarget.normalized );
 				RaycastHit LOSRayHit = new RaycastHit();
 				if(  Physics.Raycast( LOSRay, out LOSRayHit, sightRange ) && LOSRayHit.collider.gameObject == target.gameObject ) {
-					//					Debug.Log( target + " is in LOS" );
+										Debug.Log( target + " is in LOS" );
 					return true;
 				} else {
 					return false;

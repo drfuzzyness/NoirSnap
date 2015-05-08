@@ -5,7 +5,7 @@ using System.Collections;
 [RequireComponent( typeof( Photographable ) ) ]
 public class CollectableByPhoto : MonoBehaviour {
 
-	public void photographed() {
+	public void OnPhotographed() {
 		Debug.Log( gameObject.name + " is being photographed." );
 		GetComponent<Evidence>().collect();
 	}

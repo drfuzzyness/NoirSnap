@@ -29,6 +29,7 @@ public class FirstPersonCameraControl : MonoBehaviour {
 			Camera.main.transform.localEulerAngles = tempRot;
 			cam.transform.localEulerAngles = tempRot;
 			if( Input.GetAxis( "Take Photo" ) > 0 ) {
+				Debug.Log("trying to snap.");
 				cam.snap();
 			}
 

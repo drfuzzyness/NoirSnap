@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class EvidenceManager : MonoBehaviour {
 
-	private float counter = 0f;
+	public float counter = 0f;
 	
 	[Header("Setup")]
 	public float change_state;
@@ -13,13 +13,14 @@ public class EvidenceManager : MonoBehaviour {
 	public void OnCollected(){
 	
 		counter += GetComponent<Evidence>().value;
+		Debug.Log( "Evidence Manager now has " + counter + " points.");
 
 	}
 	// Update is called once per frame
 	void Update () {
 	
-		if (counter >= change_state){
-			gameObject.SendMessage( "StateChanged" );
+		if (counter >= change_state) {
+// 			gameObject.SendMessage( "StateChanged" );
 			foreach( GameObject thisObj in informStateChange ) {
 				thisObj.SendMessage( "StateChanged" );
 			}

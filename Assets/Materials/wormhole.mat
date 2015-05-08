@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: spaceHolder
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: wormhole
+  m_Shader: {fileID: 4800000, guid: bec65dd63ad37814eadb7a1a3aeb9e00, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -84,6 +84,10 @@ Material:
         second: .5
       data:
         first:
+          name: _Shininess
+        second: .0500000007
+      data:
+        first:
           name: _SrcBlend
         second: 1
       data:
@@ -130,6 +134,10 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _RimPower
+        second: 2.82999992
     m_Colors:
       data:
         first:
@@ -138,8 +146,16 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: .102941155, b: .102941155, a: 1}
+        second: {r: .986207008, g: 1, b: 0, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: 0, b: 0, a: 1}
       data:
         first:
           name: _EmissionColorUI
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: 0, g: .83448267, b: 1, a: 0}
