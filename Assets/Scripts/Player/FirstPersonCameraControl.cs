@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 [RequireComponent( typeof( Mob ))]
 public class FirstPersonCameraControl : MonoBehaviour {
 
 	public Vector2 sensitivity;
 	public bool controlEnabled = false;
 	public bool startInFirstPerson;
-	public PhotographyManager cam;
+	public PhotographyManager photoMan;
 	
 //	private Mob mb;
 //	private Rigidbody rbody;
@@ -23,57 +24,57 @@ public class FirstPersonCameraControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if( controlEnabled ) {
-			cam.transform.Rotate( -Input.GetAxis("Mouse Y") * sensitivity.y, Input.GetAxis("Mouse X") * sensitivity.x , 0f );
-			Vector3 tempRot = cam.transform.localEulerAngles;
+			photoMan.transform.Rotate( -Input.GetAxis("Mouse Y") * sensitivity.y, Input.GetAxis("Mouse X") * sensitivity.x , 0f );
+			Vector3 tempRot = photoMan.transform.localEulerAngles;
 			tempRot.z = 0f;
 			Camera.main.transform.localEulerAngles = tempRot;
-			cam.transform.localEulerAngles = tempRot;
+			photoMan.transform.localEulerAngles = tempRot;
 			if( Input.GetAxis( "Take Photo" ) > 0 ) {
 				Debug.Log("trying to snap.");
-				cam.snap();
+				photoMan.snap();
 			}
 
 //			Debug.Log( Input.GetAxis("Mouse X") + ", " + Input.GetAxis("Mouse Y") );
 		}
 		if( Input.GetAxis( "Open Camera" ) > 0 ) {
-			if( controlEnabled && !cam.inTransition ) {
+			if( controlEnabled && !photoMan.inTransition ) {
 				changeToGame();
-			} else if( !controlEnabled && !cam.inTransition ) {
+			} else if( !controlEnabled && !photoMan.inTransition ) {
 				changeToCam();
 			}
 		}
 	}
 
 	public void changeToGame() {
-		if( cam.inTransition )
+		if( photoMan.inTransition )
 			return;
 		Cursor.lockState = CursorLockMode.Confined;
 
 
-		cam.switchToGame();
+		photoMan.switchToGame();
 		GetComponent<OverheadPlayerControl>().controlEnabled = false;
 		StartCoroutine( "waitToChangeControl", false );
 	}
 	
 
 	public void changeToCam( bool rotateToMouse = true) {
-		if( cam.inTransition )
+		if( photoMan.inTransition )
 			return;
 		if( rotateToMouse ) {
 			Ray rayToMousePos = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit rayHit = new RaycastHit();
 			if( Physics.Raycast( rayToMousePos, out rayHit ) ) {
-				cam.transform.LookAt( rayHit.point );
+				photoMan.transform.LookAt( rayHit.point );
 			}
 		}
 		controlEnabled = false;
-		cam.switchToPhoto();
+		photoMan.switchToPhoto();
 		Cursor.lockState = CursorLockMode.Locked;
 		StartCoroutine( "waitToChangeControl", true );
 	}
 
 	IEnumerator waitToChangeControl( bool changeTo ) {
-		yield return new WaitForSeconds (cam.transitionTime );
+		yield return new WaitForSeconds (photoMan.transitionTime );
 		controlEnabled = changeTo;
 		GetComponent<OverheadPlayerControl>().controlEnabled = !changeTo;
 	}

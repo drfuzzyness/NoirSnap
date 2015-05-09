@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
+// using System.Collections.Generic;
+using UnityStandardAssets.ImageEffects;
 
 public class PhotographyManager : MonoBehaviour {
 
@@ -14,7 +15,7 @@ public class PhotographyManager : MonoBehaviour {
 	public float transitionTime;
 	
 	[Header("Setup")]
-
+	public bool hidePlayerOnEnter = true;	
 	public Camera mainCamera;
 	public Transform mainCameraPositionObject;
 	public AnimationCurve transition;
@@ -36,7 +37,10 @@ public class PhotographyManager : MonoBehaviour {
 	}
 
 	public void snap() {
+		if( PlayerUIManager.instance.isFlashing )
+			return;
 		foreach( Photographable thisObj in ParticipantManager.instance.photographables ) {
+			PlayerUIManager.instance.CueCameraFlash();
 // 			Debug.Log("grying to snap " + thisObj);
 			if( canSee( thisObj.transform ) ) {
 				Debug.Log( gameObject.name + " sees " + thisObj.gameObject.name );
@@ -60,7 +64,7 @@ public class PhotographyManager : MonoBehaviour {
 				RaycastHit LOSRayHit = new RaycastHit();
 				if(  Physics.Raycast( LOSRay, out LOSRayHit, sightRange ) && LOSRayHit.collider.gameObject == target.gameObject ) {
 										Debug.Log( target + " is in LOS" );
-					return true;
+					return target.GetComponent<MeshRenderer>().isVisible;
 				} else {
 					return false;
 				}
@@ -73,6 +77,10 @@ public class PhotographyManager : MonoBehaviour {
 	}
 
 	IEnumerator switchToPhotoWait() {
+		if( hidePlayerOnEnter ) {
+			ParticipantManager.instance.player.GetComponent<MeshRenderer>().enabled = false;
+		}	
+// 		ParticipantManager.instance.player.GetComponent<Collider>().enabled = false;
 		inTransition = true;
 		iTween.CameraFadeTo( 1f, transitionTime/2 );
 		iTween.MoveTo( mainCamera.gameObject, transform.position, transitionTime );
@@ -81,12 +89,15 @@ public class PhotographyManager : MonoBehaviour {
 //		mainCamera.transform.position = transform.position;
 //		mainCamera.transform.rotation = transform.rotation;
 		iTween.CameraFadeTo( 0f, transitionTime/2 );
+		PlayerUIManager.instance.noiseAndGrainEnabled = true;
 		yield return new WaitForSeconds( transitionTime/2 );
 		inPhotographyMode = true;
 		inTransition = false;
 	}
 
 	IEnumerator switchToGameWait() {
+		ParticipantManager.instance.player.GetComponent<MeshRenderer>().enabled = true;
+// 		ParticipantManager.instance.player.GetComponent<Collider>().enabled = true;
 		inTransition = true;
 		inPhotographyMode = false;
 		iTween.MoveTo( mainCamera.gameObject, mainCameraPositionObject.position, transitionTime );
@@ -95,6 +106,7 @@ public class PhotographyManager : MonoBehaviour {
 		yield return new WaitForSeconds( transitionTime/2 );
 //		mainCamera.transform.position = mainCameraPositionObject.position;
 //		mainCamera.transform.rotation = mainCameraPositionObject.rotation;
+		PlayerUIManager.instance.noiseAndGrainEnabled = false;
 		iTween.CameraFadeTo( 0f, transitionTime/2 );
 		yield return new WaitForSeconds( transitionTime/2 );
 		inTransition = false;

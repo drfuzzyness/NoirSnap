@@ -47,8 +47,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176646}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.5219116, y: 4.5999999, z: 211.582947}
+  m_LocalRotation: {x: 0, y: .999817371, z: 0, w: .019113075}
+  m_LocalPosition: {x: 128.699997, y: -2.5, z: 2.5999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 455712}
@@ -201,11 +201,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aggressing: 0
   hasCaughtTarget: 0
-  sightRange: 20
+  sightRange: 6
   requireLightToSee: 0
   onlyAggroIfCanBeSeen: 1
-  baseSightRange: 10
-  spotlightSightRange: 30
+  baseSightRange: 6
+  spotlightSightRange: 20
   visionConeAngle: 60
 --- !u!114 &11488890
 MonoBehaviour:
