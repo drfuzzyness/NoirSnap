@@ -8,10 +8,13 @@ public class PlayerVisibility : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		instance = this;
 		isVisible = false;
 
 	
+	}
+
+	void Awake (){
+		instance = this;
 	}
 	
 	// Update is called once per frame
