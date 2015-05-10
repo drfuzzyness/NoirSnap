@@ -21,20 +21,16 @@ public class PlayerUIManager : MonoBehaviour {
 	
 	[Header("Stealth Effect")]
 	public bool inStealth = true;
+	public float brokenStealthVignette;
+	public AnimationCurve stealthTransition;
+	public float stealthBrokenTime;
+	public float stealthGainTime;
 	
 	
 	private VignetteAndChromaticAberration vignette;	
 
 	public void CueCameraFlash() {
 		StartCoroutine( CameraFlash() );
-	}
-	
-	public void SeenByEnemy() {
-		
-	}
-	
-	public void NoLongerSeen() {
-		
 	}
 	
 	IEnumerator CameraFlash() {
@@ -57,6 +53,31 @@ public class PlayerUIManager : MonoBehaviour {
 		tonemapping.exposureAdjustment = prevExposure;
 		isFlashing = false;
 	}
+	
+	public void SeenByEnemy() {
+		if( inStealth) {
+			StartCoroutine( BreakStealth() );
+			inStealth = true;
+		}
+	}
+	
+	public void NoLongerSeen() {
+		if( !inStealth) {
+			StartCoroutine( GainStealth() );
+			inStealth = false;
+		}
+	}
+	
+	IEnumerator BreakStealth() {
+		float previousVignette = vignette.intensity;
+		for( float timer = 0f; timer < stealthBrokenTime; timer += Time.deltaTime ) {
+			yield return null;
+		}
+	}
+	
+	IEnumerator GainStealth() {
+		yield return null;
+	}
 
 	void Awake() {
 		instance = this;
@@ -66,12 +87,13 @@ public class PlayerUIManager : MonoBehaviour {
 		tonemapping = GetComponent<Tonemapping>();
 		vignette = GetComponent<VignetteAndChromaticAberration>();
 		noiseAndGrain = GetComponent<NoiseAndGrain>();
-		inStealth = true;
+		inStealth = true;	
 	}
 	
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log( vignette.intensity );
 		if( noiseAndGrainEnabled ) {
 			noiseAndGrain.enabled = true;
 		} else {
