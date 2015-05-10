@@ -47,8 +47,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176646}
-  m_LocalRotation: {x: 0, y: -.886188745, z: 0, w: -.463324606}
-  m_LocalPosition: {x: 39.3600006, y: 4.5999999, z: 194.949997}
+  m_LocalRotation: {x: 0, y: .493640602, z: 0, w: .86966598}
+  m_LocalPosition: {x: -109.379112, y: 60, z: 113.99778}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 455712}
@@ -122,9 +122,9 @@ Light:
   serializedVersion: 6
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 4.5999999
+  m_Intensity: 7
   m_Range: 10.1999998
-  m_SpotAngle: 60
+  m_SpotAngle: 79
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -169,8 +169,8 @@ MonoBehaviour:
   walkOnStart: 1
   isWalking: 0
   isRunning: 0
-  walkSpeed: 5
-  runSpeed: 10
+  walkSpeed: 10
+  runSpeed: 15
   stoppedDrag: 10
 --- !u!114 &11441324
 MonoBehaviour:
@@ -202,10 +202,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aggressing: 0
   hasCaughtTarget: 0
-  sightRange: 6
+  sightRange: 10
   requireLightToSee: 0
   onlyAggroIfCanBeSeen: 1
-  baseSightRange: 6
+  baseSightRange: 20
   spotlightSightRange: 20
   visionConeAngle: 60
 --- !u!114 &11488890
