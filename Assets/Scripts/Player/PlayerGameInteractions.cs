@@ -16,10 +16,16 @@ public class PlayerGameInteractions : MonoBehaviour {
 	
 	public void seenBy( GameObject target ) {
 		aggroed.Add( target );
+		PlayerUIManager.instance.SeenByEnemy();
 		
 	}
 	
 	public void noLongerSeenBy( GameObject target ) {
 		aggroed.Remove( target );
+		Debug.Log("noLongerSeen() with " + aggroed.Count + " remaining");
+		if( aggroed.Count == 0 ) {
+			PlayerUIManager.instance.NoLongerSeen();
+		}
+		
 	}
 }

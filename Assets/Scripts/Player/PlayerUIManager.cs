@@ -25,6 +25,7 @@ public class PlayerUIManager : MonoBehaviour {
 	public AnimationCurve stealthTransition;
 	public float stealthBrokenTime;
 	public float stealthGainTime;
+	private float previousVignette;
 	
 	
 	private VignetteAndChromaticAberration vignette;	
@@ -55,28 +56,42 @@ public class PlayerUIManager : MonoBehaviour {
 	}
 	
 	public void SeenByEnemy() {
+// 		Debug.Log("seenbyenemy playerUI");
 		if( inStealth) {
 			StartCoroutine( BreakStealth() );
-			inStealth = true;
+			inStealth = false;
 		}
 	}
 	
 	public void NoLongerSeen() {
 		if( !inStealth) {
+// 			Debug.Log( "starting GainStealth coroutine");
 			StartCoroutine( GainStealth() );
-			inStealth = false;
+			inStealth = true;
 		}
 	}
 	
 	IEnumerator BreakStealth() {
+		// plays the curve backwards
+// 		Debug.Log("breaking stealth");
 		float previousVignette = vignette.intensity;
 		for( float timer = 0f; timer < stealthBrokenTime; timer += Time.deltaTime ) {
+			float ratio = (stealthBrokenTime - timer)/stealthBrokenTime;
+			vignette.intensity = Mathf.Lerp( brokenStealthVignette, previousVignette, stealthTransition.Evaluate(ratio) );
 			yield return null;
 		}
+		vignette.intensity = brokenStealthVignette;
 	}
 	
 	IEnumerator GainStealth() {
-		yield return null;
+// 		float previousVignette = vignette.intensity;
+		for( float timer = 0f; timer < stealthGainTime; timer += Time.deltaTime ) {
+			float ratio = timer/stealthBrokenTime;
+			Debug.Log( Mathf.Lerp( brokenStealthVignette, previousVignette, stealthTransition.Evaluate(ratio) ) );
+			vignette.intensity = Mathf.Lerp( brokenStealthVignette, previousVignette, stealthTransition.Evaluate(ratio) );
+			yield return null;
+		}
+		vignette.intensity = previousVignette;
 	}
 
 	void Awake() {
@@ -93,7 +108,7 @@ public class PlayerUIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log( vignette.intensity );
+// 		Debug.Log( vignette.intensity );
 		if( noiseAndGrainEnabled ) {
 			noiseAndGrain.enabled = true;
 		} else {
