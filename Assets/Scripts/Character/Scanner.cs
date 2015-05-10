@@ -52,6 +52,8 @@ public class Scanner : MonoBehaviour {
 
 	public void aggro( GameObject theTarget ) {
 		if( !aggressing ) {
+			GetComponent<Renderer>().material.color = Color.red;
+
 			Debug.Log( "Starting Aggro" );
 			aggressing = true;
 			theTarget.SendMessage( "seenBy", gameObject );
@@ -62,6 +64,8 @@ public class Scanner : MonoBehaviour {
 
 	public void deaggro() {
 		if( aggressing ) {
+			GetComponent<Renderer>().material.color = Color.blue;
+
 			Debug.Log( "Stopping Aggro" );
 			aggressing = false;
 			target.SendMessage( "noLongerSeenBy", gameObject );
@@ -84,6 +88,11 @@ public class Scanner : MonoBehaviour {
 			sightRange = baseSightRange;
 		} else if ( requireLightToSee && PlayerVisibility.instance.isVisible ) {
 			sightRange = spotlightSightRange;
+		}else if (requireLightToSee && pickupItem.instance.isMoving){
+			sightRange = baseSightRange;
+		}else if (requireLightToSee && pickupItem.instance.inBox && !pickupItem.instance.isMoving){
+			sightRange = 0f;
+
 		}
 		if( !aggressing && sees( target.gameObject ) ) {
 			if( GetComponent<WalkOnRoute>() != null ) {
