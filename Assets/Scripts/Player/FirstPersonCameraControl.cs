@@ -31,7 +31,7 @@ public class FirstPersonCameraControl : MonoBehaviour {
 			photoMan.transform.localEulerAngles = tempRot;
 			if( Input.GetAxis( "Take Photo" ) > 0 ) {
 				Debug.Log("trying to snap.");
-				photoMan.snap();
+				photoMan.Snap();
 			}
 
 //			Debug.Log( Input.GetAxis("Mouse X") + ", " + Input.GetAxis("Mouse Y") );
@@ -50,7 +50,7 @@ public class FirstPersonCameraControl : MonoBehaviour {
 			return;
 		Cursor.lockState = CursorLockMode.Confined;
 
-
+		Cursor.visible = true;	
 		photoMan.switchToGame();
 		GetComponent<OverheadPlayerControl>().controlEnabled = false;
 		StartCoroutine( "waitToChangeControl", false );
@@ -70,6 +70,7 @@ public class FirstPersonCameraControl : MonoBehaviour {
 		controlEnabled = false;
 		photoMan.switchToPhoto();
 		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 		StartCoroutine( "waitToChangeControl", true );
 	}
 

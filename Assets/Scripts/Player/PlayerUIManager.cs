@@ -42,7 +42,6 @@ public class PlayerUIManager : MonoBehaviour {
 		isFlashing = true;
 		float prevExposure = tonemapping.exposureAdjustment;
 		float ratio = 1f;
-		Application.CaptureScreenshot( Time.time.ToString() + Time.unscaledTime.ToString() + ".png" );
 		yield return null;
 		for( float timer = flashDuration; timer > 0f; timer -= Time.deltaTime) {
 // 			Debug.Log( "flashing " + timer );

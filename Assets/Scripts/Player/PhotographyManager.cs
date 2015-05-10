@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-// using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityStandardAssets.ImageEffects;
 
 public class PhotographyManager : MonoBehaviour {
@@ -8,6 +8,7 @@ public class PhotographyManager : MonoBehaviour {
 	[Header("Status")]
 	public bool inPhotographyMode;
 	public bool inTransition;
+	public List<Texture> screenshots;
 
 	[Header("Balance")]
 	public float sightRange;
@@ -36,13 +37,14 @@ public class PhotographyManager : MonoBehaviour {
 		StartCoroutine( switchToGameWait() );
 	}
 
-	public void snap() {
+	public void Snap() {
 		if( PlayerUIManager.instance.isFlashing )
 			return;
+		StartCoroutine( TakeScreenshot() );
 		foreach( Photographable thisObj in ParticipantManager.instance.photographables ) {
 			PlayerUIManager.instance.CueCameraFlash();
 // 			Debug.Log("grying to snap " + thisObj);
-			if( canSee( thisObj.transform ) ) {
+			if( CanSee( thisObj.transform ) ) {
 				Debug.Log( gameObject.name + " sees " + thisObj.gameObject.name );
 				thisObj.SendMessage( "OnPhotographed" ); // Calls all functions in all components on the object with name void OnPhotographed()
 			} else {
@@ -51,7 +53,7 @@ public class PhotographyManager : MonoBehaviour {
 		}
 	}
 
-	bool canSee( Transform target ) {
+	bool CanSee( Transform target ) {
 		Vector3 vectorToTarget = target.position - transform.position;
 		bool isCloseEnough = vectorToTarget.magnitude < sightRange;
 		bool isInViewCone = false;
@@ -111,6 +113,34 @@ public class PhotographyManager : MonoBehaviour {
 		yield return new WaitForSeconds( transitionTime/2 );
 		inTransition = false;
 	}
+	
+	IEnumerator TakeScreenshot()
+    {
+        // wait for graphics to render
+		Application.CaptureScreenshot( Time.time.ToString() + Time.unscaledTime.ToString() + ".png" );
+        yield return new WaitForEndOfFrame();
+ 
+        // create a texture to pass to encoding
+        Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+ 
+        // put buffer into texture
+        texture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+        texture.Apply();
+ 
+        // split the process up--ReadPixels() and the GetPixels() call inside of the encoder are both pretty heavy
+        yield return 0;
+		screenshots.Add( texture );
+//         byte[] bytes = texture.EncodeToPNG();
+//  
+//         // save our test image (could also upload to WWW)
+//         File.WriteAllBytes(Application.dataPath + "/../testscreen-" + count + ".png", bytes);
+//         count++;
+//  
+//         // Added by Karl. - Tell unity to delete the texture, by default it seems to keep hold of it and memory crashes will occur after too many screenshots.
+//         DestroyObject( texture );
+//  
+//         //Debug.Log( Application.dataPath + "/../testscreen-" + count + ".png" );
+    }
 
 	// Use this for initialization
 	void Start () {
