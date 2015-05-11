@@ -21,6 +21,7 @@ public class Scanner : MonoBehaviour {
 
 	private WalkOnRoute walker;
 	private Mob target;
+	private Collider boxTarget;
 
 	public bool sees( GameObject target ){
 
@@ -36,7 +37,7 @@ public class Scanner : MonoBehaviour {
 //				Debug.Log( target + " is in view cone enough" );
 				Ray LOSRay = new Ray( transform.position, vectorToPlayer.normalized );
 				RaycastHit LOSRayHit = new RaycastHit();
-				if(  Physics.Raycast( LOSRay, out LOSRayHit, sightRange ) && LOSRayHit.collider.gameObject == target ) {
+				if(  Physics.Raycast( LOSRay, out LOSRayHit, sightRange ) && (LOSRayHit.collider.gameObject == target || LOSRayHit.collider.gameObject == boxTarget)) {
 //					Debug.Log( target + " is in LOS" );
 					return true;
 				} else {
@@ -80,6 +81,7 @@ public class Scanner : MonoBehaviour {
 	void Start () {
 		walker = GetComponent<WalkOnRoute>();
 		target = ParticipantManager.instance.player.GetComponent<Mob>();
+		boxTarget = ParticipantManager.instance.box.GetComponent<Collider>();
 	}
 	
 	// Update is called once per frame
@@ -88,17 +90,23 @@ public class Scanner : MonoBehaviour {
 			sightRange = baseSightRange;
 		} else if ( requireLightToSee && PlayerVisibility.instance.isVisible ) {
 			sightRange = spotlightSightRange;
-		}else if (requireLightToSee && pickupItem.instance.isMoving){
-			sightRange = baseSightRange;
-		}else if (requireLightToSee && pickupItem.instance.inBox && !pickupItem.instance.isMoving){
-			sightRange = 0f;
-
 		}
-		if( !aggressing && sees( target.gameObject ) ) {
+//			else if (requireLightToSee && pickupItem.instance.isMoving){
+//			sightRange = baseSightRange;
+//		}else if (requireLightToSee && (pickupItem.instance.inBox && !pickupItem.instance.isMoving)){
+//			sightRange = 0f;
+//		}
+
+		if( !aggressing && sees( target.gameObject )) {
 			if( GetComponent<WalkOnRoute>() != null ) {
 				GetComponent<WalkOnRoute>().interrupt( true );
 			}
 			aggro( target.gameObject );
+		}else if (!aggressing && (sees(boxTarget.gameObject) && pickupItem.instance.isMoving )){
+			if( GetComponent<WalkOnRoute>() != null ) {
+				GetComponent<WalkOnRoute>().interrupt( true );
+			}
+			aggro( boxTarget.gameObject );
 		}
 	}
 }
