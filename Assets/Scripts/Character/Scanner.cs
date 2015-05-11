@@ -102,7 +102,7 @@ public class Scanner : MonoBehaviour {
 				GetComponent<WalkOnRoute>().interrupt( true );
 			}
 			aggro( target.gameObject );
-		}else if (!aggressing && (sees(boxTarget.gameObject) && pickupItem.instance.isMoving)){
+		}else if (!aggressing && (sees(boxTarget.gameObject) && pickupItem.instance.isMoving )){
 			if( GetComponent<WalkOnRoute>() != null ) {
 				GetComponent<WalkOnRoute>().interrupt( true );
 			}

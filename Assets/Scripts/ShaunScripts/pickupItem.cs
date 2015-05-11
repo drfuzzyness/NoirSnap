@@ -42,6 +42,7 @@ public class pickupItem : MonoBehaviour {
 					transform.parent = playerPrefab.transform;
 					attached = true;
 					inBox = true;
+					gameObject.AddComponent<PlayerGameInteractions>();
 //					playerPrefab.GetComponent<CapsuleCollider>().radius = 1;
 
 
@@ -52,6 +53,7 @@ public class pickupItem : MonoBehaviour {
 					attached = false;
 					inBox = false;
 					playerPrefab.GetComponent<PlayerVisibility>().isVisible = false;
+					Destroy(GetComponent<PlayerGameInteractions>());
 
 				}
 			}
