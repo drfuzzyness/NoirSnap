@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Skybox
+  m_Name: Skybox 1
   m_Shader: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -85,7 +85,7 @@ Material:
       data:
         first:
           name: _Exposure
-        second: 1.35000002
+        second: .109999999
       data:
         first:
           name: _SunSize
@@ -93,11 +93,7 @@ Material:
       data:
         first:
           name: _AtmosphereThickness
-<<<<<<< HEAD
-        second: .180000007
-=======
-        second: .529999971
->>>>>>> 6a76d2b9b3b13b599b700f2f5e807498559c7eab
+        second: 1
       data:
         first:
           name: _SrcBlend
@@ -158,15 +154,11 @@ Material:
       data:
         first:
           name: _SkyTint
-<<<<<<< HEAD
-        second: {r: .820690155, g: 0, b: 1, a: 1}
-=======
-        second: {r: .767112792, g: .239215657, b: .823529422, a: 1}
->>>>>>> 6a76d2b9b3b13b599b700f2f5e807498559c7eab
+        second: {r: .972549021, g: .0352941193, b: .984313726, a: 1}
       data:
         first:
           name: _GroundColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: .368999988, g: .349000007, b: .340999991, a: 1}
       data:
         first:
           name: _EmissionColorUI
