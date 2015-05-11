@@ -30,8 +30,9 @@ public class pickupItem : MonoBehaviour {
 
 
 	void Update(){
-		foreach (var thisThingInBox in allThingsInBox){
-
+		foreach (Collider thisThingInBox in allThingsInBox){
+			Debug.Log (thisThingInBox);
+			Debug.Log (allThingsInBox.Count);
 			if (thisThingInBox.tag == "Player"){
 				text.text = "Press [E] to use item.";
 

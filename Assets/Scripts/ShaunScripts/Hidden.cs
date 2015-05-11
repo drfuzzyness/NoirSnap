@@ -14,7 +14,8 @@ public class Hidden : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		boxPrefab = ParticipantManager.instance.StealthBox.transform;
+		playerPrefab = ParticipantManager.instance.player.transform;
 		GetComponent<MeshRenderer>().enabled = false;
 //		curPos = playerPrefab.transform.position;
 
