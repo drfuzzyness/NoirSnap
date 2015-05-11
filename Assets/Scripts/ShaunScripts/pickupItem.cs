@@ -54,7 +54,7 @@ public class pickupItem : MonoBehaviour {
 					inBox = false;
 					playerPrefab.GetComponent<PlayerVisibility>().isVisible = false;
 					Destroy(GetComponent<PlayerGameInteractions>());
-
+					allThingsInBox.Remove(playerPrefab.GetComponent<Collider>());   // Getting rid of this piece of code turns the box into a Teleporter.
 				}
 			}
 		}
