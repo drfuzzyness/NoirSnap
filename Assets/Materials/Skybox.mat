@@ -92,8 +92,9 @@ Material:
         second: .0399999991
       data:
         first:
-          name: _AtmosphereThickness
+        name: _AtmosphereThickness
         second: .529999971
+
       data:
         first:
           name: _SrcBlend
@@ -154,7 +155,9 @@ Material:
       data:
         first:
           name: _SkyTint
-        second: {r: .767112792, g: .239215657, b: .823529422, a: 1}
+
+        second: {r: .972203612, g: .0362240225, b: .985294104, a: 1}
+
       data:
         first:
           name: _GroundColor
