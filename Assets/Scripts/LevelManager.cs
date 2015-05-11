@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	IEnumerator playerVictoryScene() {
-		gameoverScreen.SetActive( true );
+		playerVictoryScreen.SetActive( true );
 		yield return new WaitForSeconds( minDurationOfGameoverScreen );
 		while( !Input.anyKeyDown ) {
 			yield return null;

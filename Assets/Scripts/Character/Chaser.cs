@@ -37,7 +37,7 @@ public class Chaser : MonoBehaviour {
 			mb.run();
 			if(  vectorToHunted.magnitude < catchRange ) {
 				Debug.Log( gameObject.name + " has caught " + target.name );
-				target.SendMessage( "caught", gameObject );
+				target.SendMessage( "caught", gameObject);
 				
 				stopAggro();
 			}
