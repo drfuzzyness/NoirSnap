@@ -18,18 +18,20 @@ public class Mob : MonoBehaviour {
 	public float stoppedDrag;
 
 	private NavMeshAgent agent;
+	private Rigidbody rbody;
 
 	public void turnToFace( Transform target ) {
-		Debug.LogWarning( "turnToFace() is depricated." );
+// 		Debug.LogWarning( "turnToFace() is depricated." );
 		// clamps Z and X and looks at target transform
-//		Vector3 prevRot = transform.eulerAngles;
-//		transform.LookAt( target );
-//		Vector3 newRot = transform.eulerAngles;
-//		newRot.x = prevRot.x;
-//		newRot.z = prevRot.z;
-//		transform.eulerAngles = newRot;
-
+		Vector3 prevRot = transform.eulerAngles;
+		transform.LookAt( target );
+		Vector3 newRot = transform.eulerAngles;
+		newRot.x = prevRot.x;
+		newRot.z = prevRot.z;
+		rbody.rotation = Quaternion.Euler( newRot );
+// 		agent.	
 	}
+	
 
 	public void setDestination( Vector3 target ) {
 		agent.SetDestination( target );
@@ -64,6 +66,7 @@ public class Mob : MonoBehaviour {
 
 	void Start() {
 		agent = GetComponent<NavMeshAgent>();
+		rbody = GetComponent<Rigidbody>();
 //		stop();
 //		if( walkOnStart ) {
 //			walk();

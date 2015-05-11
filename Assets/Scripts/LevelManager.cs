@@ -34,12 +34,12 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	IEnumerator playerVictoryScene() {
-		gameoverScreen.SetActive( true );
+		playerVictoryScreen.SetActive( true );
 		yield return new WaitForSeconds( minDurationOfGameoverScreen );
 		while( !Input.anyKeyDown ) {
 			yield return null;
 		}
-		Application.LoadLevel( Application.loadedLevel );
+		Application.LoadLevel( nextLevelIndex );
 	}
 
 	// Use this for initialization
