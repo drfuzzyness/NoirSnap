@@ -1,15 +1,26 @@
 fileFormatVersion: 2
-guid: 99f9f671ba3d041cf87f9b4087e9c222
-timeCreated: 1430271124
+guid: e274a6862f318490480a2fc7e371215b
+timeCreated: 1431321273
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: carBody2
+    100000: bend1Handle
+    100002: bend2Handle
+    100004: group
+    100006: group1
+    100008: pCube1
+    100010: //RootNode
+    400000: bend1Handle
+    400002: bend2Handle
+    400004: group
+    400006: group1
+    400008: pCube1
+    400010: //RootNode
+    2300000: pCube1
+    3300000: pCube1
+    4300000: pCube1
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -29,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 60
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -45,9 +56,9 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
@@ -63,7 +74,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
   assetBundleName: 

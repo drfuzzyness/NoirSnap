@@ -20,6 +20,7 @@ public class PhotographyManager : MonoBehaviour {
 	public Camera mainCamera;
 	public Transform mainCameraPositionObject;
 	public AnimationCurve transition;
+	public static PhotographyManager instance;
 // 	public ParticipantManager participantManager;
 
 
@@ -130,6 +131,7 @@ public class PhotographyManager : MonoBehaviour {
         // split the process up--ReadPixels() and the GetPixels() call inside of the encoder are both pretty heavy
         yield return 0;
 		screenshots.Add( texture );
+		Debug.Log( "added " + texture + " to screenshots" );
 //         byte[] bytes = texture.EncodeToPNG();
 //  
 //         // save our test image (could also upload to WWW)
@@ -145,6 +147,10 @@ public class PhotographyManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		iTween.CameraFadeAdd();
+	}
+	
+	void Awake() {
+		instance = this;
 	}
 	
 	// Update is called once per frame

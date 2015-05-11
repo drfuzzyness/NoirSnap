@@ -43,6 +43,7 @@ public class pickupItem : MonoBehaviour {
 					transform.parent = playerPrefab.transform;
 					attached = true;
 					inBox = true;
+					gameObject.AddComponent<PlayerGameInteractions>();
 //					playerPrefab.GetComponent<CapsuleCollider>().radius = 1;
 
 
@@ -53,7 +54,8 @@ public class pickupItem : MonoBehaviour {
 					attached = false;
 					inBox = false;
 					playerPrefab.GetComponent<PlayerVisibility>().isVisible = false;
-
+					Destroy(GetComponent<PlayerGameInteractions>());
+					allThingsInBox.Remove(playerPrefab.GetComponent<Collider>());   // Getting rid of this piece of code turns the box into a Teleporter.
 				}
 			}
 		}
