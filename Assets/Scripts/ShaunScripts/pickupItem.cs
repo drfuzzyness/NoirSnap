@@ -26,6 +26,7 @@ public class pickupItem : MonoBehaviour {
 	void Start(){
 		text.text = "";
 		curPos = playerPrefab.transform.position;
+		playerPrefab = ParticipantManager.instance.player.transform;
 	}
 
 
