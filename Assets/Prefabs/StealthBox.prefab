@@ -12,6 +12,7 @@ GameObject:
   - 65: {fileID: 6508324}
   - 23: {fileID: 2339354}
   - 114: {fileID: 11435990}
+  - 114: {fileID: 11496118}
   m_Layer: 0
   m_Name: StealthBox
   m_TagString: Box
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.70000005, y: 7.3130002, z: 83.5999985}
+  m_LocalPosition: {x: -2.25999999, y: 7.30999994, z: 83.5999985}
   m_LocalScale: {x: 1.29999995, y: 1.29999995, z: 1.29999995}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,7 +89,20 @@ MonoBehaviour:
   text: {fileID: 0}
   playerPrefab: {fileID: 0}
   inBox: 0
+  isMoving: 0
   allThingsInBox: []
+--- !u!114 &11496118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf3e1622aaec48d28a2b39a6b3ef216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroed: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
