@@ -1946,6 +1946,19 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 222382367}
+    - target: {fileID: 11492400, guid: 890babd9d8a7b41bb8582f8ecd5d956c, type: 2}
+      propertyPath: m_Text
+      value: 'You''ve been hired to catch Alfonzo being unfaithful to his wife.
+
+        - Find love letters
+
+        - Photograph them in the act'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420268, guid: 890babd9d8a7b41bb8582f8ecd5d956c, type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 89188b0d6f08a40dba1409acd80c9d17,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 890babd9d8a7b41bb8582f8ecd5d956c, type: 2}
   m_IsPrefabParent: 0
