@@ -47,8 +47,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176646}
-  m_LocalRotation: {x: 0, y: -.886188745, z: 0, w: -.463324606}
-  m_LocalPosition: {x: 39.3600006, y: 4.5999999, z: 194.949997}
+  m_LocalRotation: {x: 0, y: -.327503502, z: 0, w: -.944850028}
+  m_LocalPosition: {x: 39.4599991, y: 4.5999999, z: 184.460007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 455712}
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catchRange: 2
   delayBeforeChase: 1
-  timeToSearchForPlayer: 0
+  timeToSearchForPlayer: 2
   delayAfterChase: 2
   informOnVision: []
   lastSeenMarkerPrefab: {fileID: 102396, guid: ac288b46eeb1448eeb67bcab7f28ecf6, type: 2}
@@ -220,8 +220,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWayPoint: {fileID: 0}
-  startInTransit: 1
-  keepMoving: 1
+  startInTransit: 0
+  keepMoving: 0
   inTransit: 0
   allowInterruption: 1
 --- !u!136 &13607988
