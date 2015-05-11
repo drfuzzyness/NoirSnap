@@ -7,53 +7,72 @@ using UnityEngine.UI;
 public class pickupItem : MonoBehaviour {
 
 	public Text text;
-//	public static GameObject OnObject;
 	public Transform playerPrefab;        // ASSIGN IN INSPECTOR Ayyyyy
 	public bool inBox = false;
+	public bool isMoving = false;
 	bool attached = false;
+	Vector3 curPos = new Vector3();
+	public static pickupItem instance;
+
 
 
 	public  List<Collider> allThingsInBox = new List<Collider> ();
 
+	void Awake(){
 
+		instance = this;
+
+	}
 	void Start(){
 		text.text = "";
-
+		curPos = playerPrefab.transform.position;
 	}
 
 
 	void Update(){
-
-
 		foreach (var thisThingInBox in allThingsInBox){
-//		if (playerInside != null){			//text.text = "Press [E] to pick up" + itemName;
 
 			if (thisThingInBox.tag == "Player"){
+				text.text = "Press [E] to use item.";
 
 
-			if (Input.GetKeyDown(KeyCode.E) && attached == false){
+				if (Input.GetKeyDown(KeyCode.E) && attached == false){
+					playerPrefab.GetComponent<MeshRenderer>().enabled = false;
+					playerPrefab.transform.position = transform.position;
+					transform.parent = playerPrefab.transform;
+					attached = true;
+					inBox = true;
+//					playerPrefab.GetComponent<CapsuleCollider>().radius = 1;
 
-				//Code where item is added to list player can access
-				playerPrefab.GetComponent<MeshRenderer>().enabled = false;
-				transform.parent = playerPrefab.transform;
-				attached = true;
-				text.text = "Press [E] to drop item";
-				inBox = true;
-				
-			}
-			else if (Input.GetKeyDown(KeyCode.E) && attached == true){
-				playerPrefab.GetComponent<MeshRenderer>().enabled = true;
-				transform.parent = null;
-				attached = false;
-				text.text = "Press [E] to pick up item";
-				inBox = false;
+
+				}
+				else if (Input.GetKeyDown(KeyCode.E) && attached == true){
+					playerPrefab.GetComponent<MeshRenderer>().enabled = true;
+					transform.parent = null;
+					attached = false;
+					inBox = false;
+					playerPrefab.GetComponent<PlayerVisibility>().isVisible = false;
+
 				}
 			}
 		}
+
+		if (inBox == true){
+			if (curPos != playerPrefab.transform.position){
+				playerPrefab.GetComponent<PlayerVisibility>().isVisible = true;
+				isMoving = true;
+				curPos = playerPrefab.transform.position;
+			}
+			// if the current position and the new position are the same, then the player is not visible to enemies
+			else if (curPos == playerPrefab.transform.position){
+				playerPrefab.GetComponent<PlayerVisibility>().isVisible = false;
+				isMoving = false;
+				
+			}
+			
+		}
 	}
 	void OnTriggerEnter(Collider activator) {
-
-
 		allThingsInBox.Add(activator);
 
 		//FIND OUT HOW TO CHANGE ITEM NAME BASED ON ACTUAL ITEM STRING

@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour {
 		while( !Input.anyKeyDown ) {
 			yield return null;
 		}
-		Application.LoadLevel( Application.loadedLevel );
+		Application.LoadLevel( nextLevelIndex );
 	}
 
 	// Use this for initialization

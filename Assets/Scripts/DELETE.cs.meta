@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/playerMovement.cs.meta
+guid: 3acc5c3ab09fca34eab6161263351fcc
+timeCreated: 1430334807
+=======
+guid: 24411c806e2e0334eb4043fe3b6385da
+timeCreated: 1428520164
+>>>>>>> 1a56955627497aea8491e68c5651b58dd6820c4e:Assets/Scripts/DELETE.cs.meta
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

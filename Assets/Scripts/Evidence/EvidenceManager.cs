@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class EvidenceManager : MonoBehaviour {
+
 	
 	public float counter = 0f;
 //	[Header("Setup")]
@@ -23,6 +24,7 @@ public class EvidenceManager : MonoBehaviour {
 	public void OnCollected(){
 	
 		counter += GetComponent<Evidence>().value;
+		Debug.Log( "Evidence Manager now has " + counter + " points.");
 
 	}
 

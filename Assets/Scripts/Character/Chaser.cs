@@ -8,6 +8,7 @@ public class Chaser : MonoBehaviour {
 //	public ParticipantManager participantManager;
 	public float catchRange;
 	public float delayBeforeChase;
+	public float timeToSearchForPlayer;
 	public float delayAfterChase;
 	public List<GameObject> informOnVision;
 	public GameObject lastSeenMarkerPrefab;
@@ -27,30 +28,40 @@ public class Chaser : MonoBehaviour {
 	public void stopAggro() {
 		scan.aggressing = false;
 		mb.walk();
-		StopCoroutine( "chase" );
+// 		StopCoroutine( "chase" );
+		StopAllCoroutines();
 	}
 
 	IEnumerator chase( GameObject target ) {
 		while( scan.aggressing && scan.sees ( target ) ) {
-			Vector3 vectorToHunted = target.transform.position - transform.position;
+			
 			mb.setDestination( target.transform.position );
 			mb.run();
-			if(  vectorToHunted.magnitude < catchRange ) {
-				Debug.Log( gameObject.name + " has caught " + target.name );
-				target.SendMessage( "caught", gameObject);
-				
-				stopAggro();
-			}
+			TryToCatchTarget( target );
 			yield return null;
 		}
 //		target.SendMessage("calm");
-		StartCoroutine( "chaseToLastVisible", target );
+		StartCoroutine( "searchForPlayer", target );
 		
 	}
 
+	IEnumerator	searchForPlayer( GameObject target ) {
+		for( float timer = 0; timer < timeToSearchForPlayer; timer += Time.deltaTime  ) {
+			mb.setDestination( target.transform.position );
+			mb.walk();
+			TryToCatchTarget( target );
+			if( scan.sees( target ) ) {
+				startAggro( target );
+				yield break;
+			}
+			yield return null;
+		}
+		StartCoroutine( "chaseToLastVisible", target );
+	}
 	IEnumerator chaseToLastVisible( GameObject target ) {
 		Vector3 targetPos = target.transform.position;
 		lastSeen = Instantiate( lastSeenMarkerPrefab, targetPos, transform.rotation * Quaternion.Euler( 90f, 0f, 0f ) ) as GameObject;
+		// creates lastSeenMarket rotated to the 
 		mb.setDestination( target.transform.position );
 		while( GetComponent<NavMeshAgent>().remainingDistance > 0.01f ) {
 			if( scan.sees( target ) ) {
@@ -65,6 +76,16 @@ public class Chaser : MonoBehaviour {
 		Destroy( lastSeen );
 	}
 
+	void TryToCatchTarget( GameObject target ) {
+		Vector3 vectorToHunted = target.transform.position - transform.position;
+		if(  vectorToHunted.magnitude < catchRange ) {
+			Debug.Log( gameObject.name + " has caught " + target.name );
+			target.SendMessage( "caught", gameObject );
+			mb.walk();
+			stopAggro();
+		}
+	}
+		
 	// Use this for initialization
 	void Start () {
 		scan = GetComponent<Scanner>();
