@@ -7,3 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/testLevelJoao.unity
+  - enabled: 1
+    path: Assets/Scenes/OfficeLevel.unity
+  - enabled: 1
+    path: Assets/Scenes/testLevelSewer.unity
