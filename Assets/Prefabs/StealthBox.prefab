@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.70000005, y: 7.3130002, z: 83.5999985}
+  m_LocalPosition: {x: -2.25999999, y: 7.30999994, z: 83.5999985}
   m_LocalScale: {x: 1.29999995, y: 1.29999995, z: 1.29999995}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,6 +88,7 @@ MonoBehaviour:
   text: {fileID: 0}
   playerPrefab: {fileID: 0}
   inBox: 0
+  isMoving: 0
   allThingsInBox: []
 --- !u!1001 &100100000
 Prefab:
