@@ -4,11 +4,22 @@ using System.Collections.Generic;
 
 public class EvidenceManager : MonoBehaviour {
 
-	public float counter = 0f;
 	
-	[Header("Setup")]
+	public float counter = 0f;
+//	[Header("Setup")]
+//	private bool hasBeenInformed;
 	public float change_state;
-	public List<GameObject> informStateChange;
+//	public List<GameObject> informStateChange;
+//
+	void Start (){
+
+
+	}
+
+	void Update(){
+
+
+	}
 
 	public void OnCollected(){
 	
@@ -16,15 +27,24 @@ public class EvidenceManager : MonoBehaviour {
 		Debug.Log( "Evidence Manager now has " + counter + " points.");
 
 	}
-	// Update is called once per frame
-	void Update () {
-	
-		if (counter >= change_state) {
-// 			gameObject.SendMessage( "StateChanged" );
-			foreach( GameObject thisObj in informStateChange ) {
-				thisObj.SendMessage( "StateChanged" );
-			}
-		}
 
-	}
+
+	
+
+
+//	// Update is called once per frame
+//	void Update () {
+//	
+//		for (int i = 0; i < change_state; i++) {
+//			if (counter >= change_state[i] && hasBeenInformed == false){
+//				gameObject.SendMessage( "StateChanged" );
+//				informStateChange[i].SendMessage( "StateChanged" );
+//				hasBeenInformed = true;
+//			}
+//			if (counter >= change_state[i]) {
+//				LevelManager.instance.playerWon();
+//			}
+//		}
+//	}
 }
+
