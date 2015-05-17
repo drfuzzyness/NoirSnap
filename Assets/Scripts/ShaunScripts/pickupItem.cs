@@ -26,12 +26,14 @@ public class pickupItem : MonoBehaviour {
 	void Start(){
 		text.text = "";
 		curPos = playerPrefab.transform.position;
+		playerPrefab = ParticipantManager.instance.player.transform;
 	}
 
 
 	void Update(){
-		foreach (var thisThingInBox in allThingsInBox){
-
+		foreach (Collider thisThingInBox in allThingsInBox){
+			Debug.Log (thisThingInBox);
+			Debug.Log (allThingsInBox.Count);
 			if (thisThingInBox.tag == "Player"){
 				text.text = "Press [E] to use item.";
 

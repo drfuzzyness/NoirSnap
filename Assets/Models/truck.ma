@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
 //Name: truck.ma
-//Last modified: Mon, May 11, 2015 01:26:06 PM
+//Last modified: Mon, May 11, 2015 10:46:46 PM
 //Codeset: 1252
 requires maya "2015";
 currentUnit -l centimeter -a degree -t film;
@@ -12,12 +12,12 @@ fileInfo "osv" "Microsoft Windows 8 Home Premium Edition, 64-bit  (Build 9200)\n
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -2.3134822169847755 8.5878230460356839 16.888832057604603 ;
-	setAttr ".r" -type "double3" -26.738352729601765 -7.8000000000027816 -1.4044872128897718e-015 ;
+	setAttr ".t" -type "double3" 28.712244458169454 1.6374699742464589 -18.645949568875306 ;
+	setAttr ".r" -type "double3" -2.7383527296028882 122.99999999999713 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 19.08757587825886;
+	setAttr ".coi" 34.274563820232871;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -88,7 +88,7 @@ createNode mesh -n "pCubeShape2" -p "pCube2";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 3 ".pt[3:4]" -type "float3"  2.3841858e-007 0 0 0 0 0;
+	setAttr -s 2 ".pt[3:4]" -type "float3"  2.3841858e-007 0 0 0 0 0;
 createNode transform -n "pTorus1";
 	setAttr ".t" -type "double3" 1.734083020797021 0.86380176055468261 -4.2097540624750174 ;
 	setAttr ".r" -type "double3" 0 0 90 ;
@@ -489,8 +489,6 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "polyCube1.out" "pCubeShape1.i";
 connectAttr "polyCube2.out" "pCubeShape2.i";
 connectAttr "polyTorus1.out" "pTorusShape1.i";

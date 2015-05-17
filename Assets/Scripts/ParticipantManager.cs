@@ -9,7 +9,7 @@ public class ParticipantManager : MonoBehaviour {
 	public List<Character> characters;
 	public List<Photographable> photographables;
 	public static ParticipantManager instance;
-
+	public Transform StealthBox;
 	// Use this for initialization
 	void Awake () {
 		instance = this;

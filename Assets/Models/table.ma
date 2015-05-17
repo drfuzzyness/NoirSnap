@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
 //Name: table.ma
-//Last modified: Mon, May 11, 2015 02:33:52 PM
+//Last modified: Mon, May 11, 2015 10:43:56 PM
 //Codeset: 1252
 requires maya "2015";
 currentUnit -l centimeter -a degree -t film;
@@ -12,12 +12,12 @@ fileInfo "osv" "Microsoft Windows 8 Home Premium Edition, 64-bit  (Build 9200)\n
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.21802990195623906 10.489190754656001 -20.819560906305718 ;
-	setAttr ".r" -type "double3" -26.738352728614558 -540.60000000006585 0 ;
+	setAttr ".t" -type "double3" 13.348241100567652 9.4088940745832375 5.9989374112022347 ;
+	setAttr ".r" -type "double3" -32.738352728510421 -654.20000000005268 1.5517813925461119e-014 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 23.313617824294365;
+	setAttr ".coi" 17.397990638268425;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -277,10 +277,8 @@ createNode mesh -n "pasted__pPyramidShape1" -p "transform1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt";
-	setAttr ".pt[2]" -type "float3" -3.7252903e-008 0 7.4505806e-009 ;
-	setAttr ".pt[3]" -type "float3" -3.7252903e-008 0 7.4505806e-009 ;
-	setAttr ".pt[4]" -type "float3" -3.7252903e-008 0 7.4505806e-009 ;
+	setAttr -s 3 ".pt[2:4]" -type "float3"  -3.7252903e-008 0 7.4505806e-009 
+		-3.7252903e-008 0 7.4505806e-009 -3.7252903e-008 0 7.4505806e-009;
 createNode transform -n "pPyramid2";
 	setAttr ".t" -type "double3" 0.20901685663193659 0 -0.48001572100126166 ;
 createNode mesh -n "pPyramid2Shape" -p "pPyramid2";
