@@ -1,16 +1,16 @@
 ![](https://raw.githubusercontent.com/drfuzzyness/NoirSnap/conto/Marketing/EXPOSURE-02.png)
-EXPOSURE
-=============
 
 A detective game of stealth and photography.
 
 ## Made by:
 
-- Matthew Conto
+- [Matthew Conto](https://twitter.com/drfuzzyness)
 - João Amaro
 - Richard Campbell
 - Pear Yam
 - Shaun Bandrowski
+
+Download at [dreadmorrison.itch.io/exposure](http://dreadmorrison.itch.io/exposure) for free.
 
 ![](https://raw.githubusercontent.com/drfuzzyness/NoirSnap/conto/Marketing/dialogue.gif)
 
