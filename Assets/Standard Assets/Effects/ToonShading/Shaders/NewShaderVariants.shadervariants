@@ -1,0 +1,293 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!200 &20000000
+ShaderVariantCollection:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: NewShaderVariants
+  m_Shaders:
+    data:
+      first: {fileID: 4800000, guid: 963484209d11fd7f110076aa44295342, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: d84268709d11078d11005b9844295342, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 3954501323f24464f9e4418c78d8e8ce, type: 3}
+      second:
+        variants:
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+    data:
+      first: {fileID: 4800000, guid: 8aaff0751054e4a9cb4642d01eaf5be9, type: 3}
+      second:
+        variants:
+        - keywords: WATER_EDGEBLEND_ON WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 9ce107479d11178d11005b9844295342, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+    data:
+      first: {fileID: 4800000, guid: 9dccc8e8f0da4494991c26ef59019551, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 2b4f29398d9484ccfa9fd220449f5eee, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 054a31a99d11e49d110086ba44295342, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+    data:
+      first: {fileID: 4800000, guid: 48dca5b99d113b8d11006bab44295342, type: 3}
+      second:
+        variants:
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+    data:
+      first: {fileID: 4800000, guid: c0ace1ca4bc0718448acf798c93d52d9, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 1cac2e0bcc34e4b3cbb4bd85982eba83, type: 3}
+      second:
+        variants:
+        - keywords: WATER_REFRACTIVE
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: e97c14fbb5ea04c3a902cc533d7fc5d1, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 01a668cc78047034a8a0c5ca2d24c6f7, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 627943dc7a9a74286b70a4f694a0acd5, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 003377fc2620a44939dadde6fe3f8190, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 475c4a4e617a8401b84ca7b32c7cc460, type: 3}
+      second:
+        variants:
+        - keywords: WATER_EDGEBLEND_ON WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 0a4b0bce1e250a14bb534d70bce205fa, type: 3}
+      second:
+        variants:
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+    data:
+      first: {fileID: 69, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+        - keywords: DIRECTIONAL SHADOWS_OFF
+          passType: 0
+        - keywords: DIRECTIONAL SHADOWS_OFF UNITY_HDR_ON
+          passType: 0
+        - keywords: SHADOWS_DEPTH SHADOWS_NATIVE SPOT UNITY_HDR_ON
+          passType: 0
+    data:
+      first: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+    data:
+      first: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 10782, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL SHADOWS_OFF
+          passType: 5
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+        - keywords: DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF UNITY_HDR_ON
+          passType: 10
+    data:
+      first: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL SHADOWS_OFF
+          passType: 5
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+        - keywords: DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF UNITY_HDR_ON
+          passType: 10
+    data:
+      first: {fileID: 4, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+    data:
+      first: {fileID: 101, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: UNITY_COLORSPACE_GAMMA
+          passType: 0
+    data:
+      first: {fileID: 10604, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+    data:
+      first: {fileID: 10605, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+    data:
+      first: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 14000, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF EFFECT_BUMP EFFECT_HUE_VARIATION
+            GEOM_TYPE_FROND LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF EFFECT_BUMP EFFECT_HUE_VARIATION
+            GEOM_TYPE_BRANCH LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF EFFECT_BUMP EFFECT_HUE_VARIATION
+            GEOM_TYPE_BRANCH_DETAIL LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF EFFECT_BUMP EFFECT_HUE_VARIATION
+            GEOM_TYPE_BRANCH_BLEND LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF EFFECT_BUMP EFFECT_HUE_VARIATION
+            GEOM_TYPE_LEAF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF EFFECT_BUMP EFFECT_HUE_VARIATION
+            GEOM_TYPE_FACING_LEAF LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL EFFECT_BUMP EFFECT_HUE_VARIATION GEOM_TYPE_FROND
+          passType: 5
+        - keywords: DIRECTIONAL EFFECT_BUMP EFFECT_HUE_VARIATION GEOM_TYPE_BRANCH
+          passType: 5
+        - keywords: DIRECTIONAL EFFECT_BUMP EFFECT_HUE_VARIATION GEOM_TYPE_BRANCH_DETAIL
+          passType: 5
+        - keywords: DIRECTIONAL EFFECT_BUMP EFFECT_HUE_VARIATION GEOM_TYPE_BRANCH_BLEND
+          passType: 5
+        - keywords: DIRECTIONAL EFFECT_BUMP EFFECT_HUE_VARIATION GEOM_TYPE_LEAF
+          passType: 5
+        - keywords: DIRECTIONAL EFFECT_BUMP EFFECT_HUE_VARIATION GEOM_TYPE_FACING_LEAF
+          passType: 5
+        - keywords: GEOM_TYPE_FROND SHADOWS_DEPTH
+          passType: 8
+        - keywords: GEOM_TYPE_BRANCH SHADOWS_DEPTH
+          passType: 8
+        - keywords: GEOM_TYPE_BRANCH_DETAIL SHADOWS_DEPTH
+          passType: 8
+        - keywords: GEOM_TYPE_BRANCH_BLEND SHADOWS_DEPTH
+          passType: 8
+        - keywords: GEOM_TYPE_LEAF SHADOWS_DEPTH
+          passType: 8
+        - keywords: GEOM_TYPE_FACING_LEAF SHADOWS_DEPTH
+          passType: 8
+    data:
+      first: {fileID: 14001, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF EFFECT_BUMP EFFECT_HUE_VARIATION
+            LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: BILLBOARD_FACE_CAMERA_POS DIRECTIONAL DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF
+            EFFECT_BUMP EFFECT_HUE_VARIATION LIGHTMAP_OFF SHADOWS_OFF
+          passType: 4
+        - keywords: DIRECTIONAL EFFECT_BUMP EFFECT_HUE_VARIATION
+          passType: 5
+        - keywords: BILLBOARD_FACE_CAMERA_POS DIRECTIONAL EFFECT_BUMP EFFECT_HUE_VARIATION
+          passType: 5
+        - keywords: SHADOWS_DEPTH
+          passType: 8
