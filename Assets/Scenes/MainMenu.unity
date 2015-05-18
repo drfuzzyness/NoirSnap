@@ -977,8 +977,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: 70}
-  m_SizeDelta: {x: -10, y: -151}
+  m_AnchoredPosition: {x: -5.00000381, y: 70}
+  m_SizeDelta: {x: 61, y: -151}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &176779786
 MonoBehaviour:
@@ -996,7 +996,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: b63238337806f4c8a97dd2a4fdb74d77, type: 3}
-    m_FontSize: 96
+    m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2140,7 +2140,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 319671665}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d678ef2fe19bf46628dfa2b902a7277d, type: 3}
   m_Name: 
@@ -2196,7 +2196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
-  intensity: 2.1099999
+  intensity: -52.8199997
   chromaticAberration: 0
   axialAberration: .5
   blur: 1.29999995
@@ -3065,7 +3065,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 438367117}
   m_LocalRotation: {x: .404134035, y: -.0944531187, z: .097399801, w: .904581487}
-  m_LocalPosition: {x: 0, y: 0, z: 2.24000001}
+  m_LocalPosition: {x: 0, y: 0, z: 4.36000013}
   m_LocalScale: {x: .0337039717, y: .0337039642, z: .0337039642}
   m_Children:
   - {fileID: 176779785}
@@ -3075,8 +3075,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -5.75, y: 51.4300003}
-  m_SizeDelta: {x: 437.040009, y: 287.209991}
+  m_AnchoredPosition: {x: -5.71999979, y: 45.7900009}
+  m_SizeDelta: {x: 707.039978, y: 522.590027}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &438367119
 MonoBehaviour:
@@ -5586,7 +5586,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 89188b0d6f08a40dba1409acd80c9d17, type: 3}
-    m_FontSize: 24
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -5596,7 +5596,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Matthew Conto\nJo\xE3o Amaro\nRichard Campbell\nPear Yam\nShaun Bandrowski"
+  m_Text: "Matthew Conto\nJo\xE3o Amaro\nRichard Campbell\nPear Yam and\nShaun Bandrowski,"
 --- !u!222 &802021823
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5612,14 +5612,14 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 802021821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 7.62939999e-06}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 438367118}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.76837158e-07, y: -34.9999847}
+  m_AnchoredPosition: {x: -41, y: 323}
   m_SizeDelta: {x: 0, y: -70}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &803832170
@@ -7280,7 +7280,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 77, y: -23}
+  m_AnchoredPosition: {x: -50, y: -94}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1055444919
@@ -10396,7 +10396,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4d05471bd3f164b8da8e637249d4b804, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -10407,7 +10407,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start Case
+  m_Text: Take a Case
 --- !u!222 &1512061312
 CanvasRenderer:
   m_ObjectHideFlags: 0
